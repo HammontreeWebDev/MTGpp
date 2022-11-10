@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const { User, Deck } = require("../../models");
-const withAuth = require("../../utils/auth");
+// const withAuth = require("../../utils/auth");
 
+// Get a list of decks for the user with id = :id
 router.get("/:id", async (req, res) => {
-    // Get a list of decks for the user with id = :id
     try {
         const userData = await Deck.findAll({
             where: {
@@ -19,20 +19,62 @@ router.get("/:id", async (req, res) => {
         }
         res.status(200).json(userData);
     } catch (err) {
+        console.error(err);
         res.status(500).json(err);
     }
 });
 
-router.post("/", withAuth, async (req, res) => {
-    // Create a new deck
+// Create a new deck
+// TODO: Check for authorization
+router.post("/", async (req, res) => {
+    try {
+        const deckData = await Deck.create(req.body);
+        res.status(200).json(deckData);
+    } catch (err) {
+        console.error(err);
+        res.status(400).json(err);
+    }
 });
 
-router.put("/", withAuth, async (req, res) => {
-    // Update an existing deck
+// Update an existing deck
+// TODO: Check for authorization
+router.put("/", async (req, res) => {
+    try {
+        const deckData = await Deck.update(req.body, {
+            where: {
+                id: req.body.id
+            }
+        })
+
+        if (!deckData) {
+            res.status(400).json({message: "Deck does not exist. Please create it first."})
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
 });
 
-router.delete("/", withAuth, async (req, res) => {
-    // Delete a deck
+// Delete a deck
+// TODO: Check for authorization
+router.delete("/", async (req, res) => {
+    try {
+        const deckData = await Deck.destroy({
+            where: {
+                id: req.body.id,
+            },
+        });
+
+        if (!deckData) {
+            res.status(404).json({ message: "No deck found with that id" });
+            return;
+        }
+
+        res.status(200).json(deckData);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
 });
 
 module.exports = router;
