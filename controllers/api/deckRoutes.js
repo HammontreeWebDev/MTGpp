@@ -42,12 +42,14 @@ router.put("/", async (req, res) => {
     try {
         const deckData = await Deck.update(req.body, {
             where: {
-                id: req.body.id
-            }
-        })
+                id: req.body.id,
+            },
+        });
 
         if (!deckData) {
-            res.status(400).json({message: "Deck does not exist. Please create it first."})
+            res.status(400).json({
+                message: "Deck does not exist. Please create it first.",
+            });
         }
     } catch (err) {
         console.error(err);
