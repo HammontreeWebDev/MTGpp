@@ -1,0 +1,45 @@
+/* Color Splash in HEX */
+.mp1-hex { color: #E68DF2; }
+.mp2-hex { color: #AE4AD9; }
+.mp3-hex { color: #5A278C; }
+.mp4-hex { color: #100626; }
+.mp5-hex { color: #2A1459; }
+
+/* Northern lights in HEX */
+.am1-hex { color: #04BF9D; }
+.am2-hex { color: #04BFAD; }
+.am3-hex { color: #027373; }
+.am4-hex { color: #5FCDD9; }
+.am5-hex { color: #172026; }
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #172026;
+}
+
+header {
+    background-color: #100626;
+    border-bottom: #5A278C solid 5px;
+}
+
+footer {
+    height: 150px;
+    background-color: #172026;
+}
+
+nav {
+    background-color: #2A1459;
+}
+
+#place-holder {
+    height: 400px;
+}
+
+.carousel-inner{
+    margin: auto;
+    width:20%;
+    max-height: 400px !important;
+  }
