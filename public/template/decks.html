@@ -5,29 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-    <!-- Custom Style Sheet -->
-    <link rel="stylesheet" href="../public/css/style.css">
+    <title>MTG++ (My Decks)</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
-    <header class="text-center">
-        <h1>MTG++ Decks</h1>
+    <header class="container-fluid">
+        <h1 class="display-2 text-center">MTG++ Decks</h1>
+        <p class="text-end mp3-hex">"Greatness, at any cost" - Dark Confidant</p>
     </header>
-    <nav class="navbar bg-light">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <button>Logout</button>
-            <button id="create-deck">
+            <a href="#" class="nav-link">Logout</a>
+            <a href="#" id="create-deck" class="nav-link">
                 Create Deck
                 <iconify-icon icon="charm:cards"></iconify-icon>
-            </button>
+            </a>
         </div>
     </nav>
     <main class="container">
@@ -38,23 +36,28 @@
                     <ul class="list-group">
                         <li class="list-group-item">An item <span>
                                 <iconify-icon icon="fa-regular:edit"></iconify-icon>
-                                <iconify-icon class="deleteBtn justify-content-end d-flex" icon="fluent:delete-off-20-regular"></iconify-icon>
+                                <iconify-icon class="deleteBtn justify-content-end d-flex"
+                                    icon="fluent:delete-off-20-regular"></iconify-icon>
                             </span></li>
                         <li class="list-group-item">A second item<span>
                                 <iconify-icon icon="fa-regular:edit"></iconify-icon>
-                                <iconify-icon class="deleteBtn justify-content-end d-flex" icon="fluent:delete-off-20-regular"></iconify-icon>
+                                <iconify-icon class="deleteBtn justify-content-end d-flex"
+                                    icon="fluent:delete-off-20-regular"></iconify-icon>
                             </span></li>
                         <li class="list-group-item">A third item<span>
                                 <iconify-icon icon="fa-regular:edit"></iconify-icon>
-                                <iconify-icon class="deleteBtn justify-content-end d-flex" icon="fluent:delete-off-20-regular"></iconify-icon>
+                                <iconify-icon class="deleteBtn justify-content-end d-flex"
+                                    icon="fluent:delete-off-20-regular"></iconify-icon>
                             </span></li>
                         <li class="list-group-item">A fourth item<span>
                                 <iconify-icon icon="fa-regular:edit"></iconify-icon>
-                                <iconify-icon class="deleteBtn justify-content-end d-flex" icon="fluent:delete-off-20-regular"></iconify-icon>
+                                <iconify-icon class="deleteBtn justify-content-end d-flex"
+                                    icon="fluent:delete-off-20-regular"></iconify-icon>
                             </span></li>
                         <li class="list-group-item">And a fifth one<span>
                                 <iconify-icon icon="fa-regular:edit"></iconify-icon>
-                                <iconify-icon class="deleteBtn justify-content-end d-flex" icon="fluent:delete-off-20-regular"></iconify-icon>
+                                <iconify-icon class="deleteBtn justify-content-end d-flex"
+                                    icon="fluent:delete-off-20-regular"></iconify-icon>
                             </span></li>
                     </ul>
                 </div>
@@ -62,6 +65,9 @@
         </section>
     </main>
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/decks.js"></script>
 
 </body>
 
