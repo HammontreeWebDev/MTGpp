@@ -28,6 +28,23 @@ header {
     border-bottom: #5A278C solid 5px;
 }
 
+header h1 {
+    font-family: 'Cinzel', serif;
+    color: #f2f2f2;
+    text-shadow: 
+        0 0 7px #04BFAD,
+        0 0 10px #04BFAD,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #04BFAD;
+}
+
+header p {
+    font-family: 'Merienda', serif;
+    font-size: 1.75rem;
+}
+
 footer {
     height: 150px;
     background-color: #172026;
