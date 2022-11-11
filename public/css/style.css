@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    background: url("/Users/putzstuck/Documents/UCF/projects/MTGpp/public/assets/images/homepage-header-image.jpg");
+    background: url('../assets/images/homepage-header-image.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: #100626;
@@ -54,12 +54,20 @@ nav {
     background-color: #2A1459;
 }
 
-#place-holder {
-    height: 400px;
-}
-
 .carousel-inner{
     margin: auto;
     width:25%;
     max-height: 400px !important;
-  }
+}
+
+.nav-link {
+    color: #f2f2f2;
+    font-family: 'Gruppo', serif;
+    font-size: 1.5rem;
+}
+
+.navbar-brand {
+    color: #f2f2f2; 
+    font-family: 'Cinzel', serif;
+    font-size: 1.75rem;
+}
