@@ -64,10 +64,18 @@ nav {
     color: #f2f2f2;
     font-family: 'Gruppo', serif;
     font-size: 1.5rem;
+    text-shadow:
+        0 0 2px #04BFAD,
+        0 0 5px #fff,
+        0 0 8px #0fa;
 }
 
 .navbar-brand {
     color: #f2f2f2; 
     font-family: 'Cinzel', serif;
-    font-size: 1.75rem;
+    font-size: 2rem;
+    text-shadow:
+        0 0 2px #04BFAD,
+        0 0 5px #fff,
+        0 0 10px #0fa;
 }
