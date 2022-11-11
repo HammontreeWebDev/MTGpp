@@ -21,6 +21,9 @@ body {
 }
 
 header {
+    background: url("/Users/putzstuck/Documents/UCF/projects/MTGpp/public/assets/images/homepage-header-image.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     background-color: #100626;
     border-bottom: #5A278C solid 5px;
 }
@@ -40,6 +43,6 @@ nav {
 
 .carousel-inner{
     margin: auto;
-    width:20%;
+    width:25%;
     max-height: 400px !important;
   }
