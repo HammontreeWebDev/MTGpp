@@ -138,4 +138,11 @@ nav {
 /* bg color for the card used on decks page */
 .deck-bg {
     background-color: var(--mp5);
+    border: 3px solid var(--mp3);
+}
+.deck-names {
+    background-color: var(--am5);
+    color: var(--mp1);
+    border: none;
+    margin-bottom: 2%;
 }
