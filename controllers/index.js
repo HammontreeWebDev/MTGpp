@@ -1,9 +1,15 @@
 const router = require('express').Router();
 
 const apiRoutes = require('./api');
-const homeRoutes = require('./homeRoutes');
+const homepageRoutes = require('./homepageRoutes');
+const loginRoutes = require('./loginRoutes');
+const decksRoutes = require('./decksRoutes');
+const decklistRoutes = require('./decklistRoutes');
 
-router.use('/', homeRoutes);
+router.use('/', homepageRoutes);
 router.use('/api', apiRoutes);
+router.use('/login', loginRoutes);
+router.use('/decks', decksRoutes);
+router.use('/decklist', decklistRoutes);
 
 module.exports = router;
