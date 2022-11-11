@@ -6,54 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTG++ Deck Builder</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
 <header class="container-fluid">
-    <h1 class="display-2 text-center am4-hex">Magic: the Gathering Deck Creation</h1>
-    <p class="display-6 text-center am3-hex">All of your favorite decks in one place.</p>
+    <h1 class="display-2 text-center">Magic: the Gathering Deck Creation</h1>
+    <p class="text-end mp3-hex">All of your favorite decks in one place.</p>
 </header>
 
 <body>
-    <nav class="navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand mp5-hex">Navbar</a>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark" type="submit">Search</button>
-          </form>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Wizards of the Cache</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="#">Sign In</a>
+          <a class="nav-link" href="#">Register</a>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
+    <br>
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://via.placeholder.com/200/5FCDD9" class="d-block w-100" alt="...">
+            <img src="https://via.placeholder.com/400/5FCDD9" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="https://via.placeholder.com/200/027373" class="d-block w-100" alt="...">
+            <img src="https://via.placeholder.com/400/027373" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="https://via.placeholder.com/200/04BFAD" class="d-block w-100" alt="...">
+            <img src="https://via.placeholder.com/400/04BFAD" class="d-block w-100" alt="...">
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <div id="place-holder" class="container-fluid">
-
-    </div>
-
 </body>
-
-<footer>
-    <nav class="nav justify-content-center">
-        <a class="nav-link am3-hex" href="#">Active</a>
-        <a class="nav-link am3-hex" href="#">Link</a>
-        <a class="nav-link am3-hex" href="#">Link</a>
-        <a class="nav-link am3-hex" href="#">Disabled</a>
-    </nav>
-</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
