@@ -145,4 +145,25 @@ nav {
     color: var(--mp1);
     border: none;
     margin-bottom: 2%;
+    font-family: 'Merienda', serif;
+}
+.editBtn {
+    color: var(--mp1);
+    background-color: transparent;
+    border: transparent;
+}
+.editBtn:hover {
+    color: white;
+}
+.deleteBtn {
+    color: var(--mp1);
+    background-color: transparent;
+    border: transparent; 
+}
+.deleteBtn:hover {
+    color: white;
+}
+.deck-link:hover {
+    color: white;
+    cursor: pointer;
 }
