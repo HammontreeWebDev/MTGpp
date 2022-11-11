@@ -1,16 +1,59 @@
+:root {
+    /* Color Splash variables */
+    --mp1: #E68DF2;
+    --mp2: #AE4AD9;
+    --mp3: #5A278C;
+    --mp4: #100626;
+    --mp5: #2A1459;
+
+    /* Northern Lights variables */
+    --am1: #04BF9D;
+    --am2: #04BFAD;
+    --am3: #027373;
+    --am4: #5FCDD9;
+    --am5: #172026;
+}
 /* Color Splash in HEX */
-.mp1-hex { color: #E68DF2; }
-.mp2-hex { color: #AE4AD9; }
-.mp3-hex { color: #5A278C; }
-.mp4-hex { color: #100626; }
-.mp5-hex { color: #2A1459; }
+.mp1-hex {
+    color: #E68DF2;
+}
+
+.mp2-hex {
+    color: #AE4AD9;
+}
+
+.mp3-hex {
+    color: #5A278C;
+}
+
+.mp4-hex {
+    color: #100626;
+}
+
+.mp5-hex {
+    color: #2A1459;
+}
 
 /* Northern lights in HEX */
-.am1-hex { color: #04BF9D; }
-.am2-hex { color: #04BFAD; }
-.am3-hex { color: #027373; }
-.am4-hex { color: #5FCDD9; }
-.am5-hex { color: #172026; }
+.am1-hex {
+    color: #04BF9D;
+}
+
+.am2-hex {
+    color: #04BFAD;
+}
+
+.am3-hex {
+    color: #027373;
+}
+
+.am4-hex {
+    color: #5FCDD9;
+}
+
+.am5-hex {
+    color: #172026;
+}
 
 
 body {
@@ -31,7 +74,7 @@ header {
 header h1 {
     font-family: 'Cinzel', serif;
     color: #f2f2f2;
-    text-shadow: 
+    text-shadow:
         0 0 7px #04BFAD,
         0 0 10px #04BFAD,
         0 0 21px #fff,
@@ -51,12 +94,12 @@ footer {
 }
 
 nav {
-    background-color: #2A1459;
+    background-color: var(--mp5);
 }
 
-.carousel-inner{
+.carousel-inner {
     margin: auto;
-    width:25%;
+    width: 25%;
     max-height: 400px !important;
 }
 
@@ -71,11 +114,28 @@ nav {
 }
 
 .navbar-brand {
-    color: #f2f2f2; 
+    color: #f2f2f2;
     font-family: 'Cinzel', serif;
     font-size: 2rem;
     text-shadow:
         0 0 2px #04BFAD,
         0 0 5px #fff,
         0 0 10px #0fa;
+}
+/* Styling for the titles used on decks and decklist pages */
+.deck-title {
+    font-family: 'Cinzel', serif;
+    color: #f2f2f2;
+    text-shadow:
+        0 0 7px #04BFAD,
+        0 0 10px #04BFAD,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #04BFAD;
+    font-size: 200%;
+}
+/* bg color for the card used on decks page */
+.deck-bg {
+    background-color: var(--mp5);
 }
