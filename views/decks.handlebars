@@ -18,18 +18,7 @@
                 <h5 class="card-title text-center deck-title">My Decks</h5>
                 <ul class="list-group">
                     {{!-- For each deck this user has, present the name that is stored in the database --}}
-                    <li class="list-group-item deck-names py-3 d-flex justify-content-between">
-                        {{!-- insert deck name into list item --}}
-                        <p class="deck-link">{{deck-name}}</p>
-                        <span>
-                            <button class="editBtn">
-                                <iconify-icon icon="fa-regular:edit"></iconify-icon>
-                            </button>
-                            <button class="deleteBtn">
-                                <iconify-icon icon="fluent:delete-off-20-regular"></iconify-icon>
-                            </button>
-                        </span>
-                    </li>
+                    {{#if logged_in}}
                 </ul>
             </div>
         </div>
