@@ -19,7 +19,8 @@
                 <ul class="list-group">
                     {{!-- For each deck this user has, present the name that is stored in the database --}}
                     <li class="list-group-item deck-names py-3 d-flex justify-content-between">
-                        <p class="deck-link">An Item</p>
+                        {{!-- insert deck name into list item --}}
+                        <p class="deck-link">{{deck-name}}</p>
                         <span>
                             <button class="editBtn">
                                 <iconify-icon icon="fa-regular:edit"></iconify-icon>
