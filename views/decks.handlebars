@@ -1,0 +1,30 @@
+<header class="container-fluid">
+    <h1 class="display-2 text-center">MTG++ Decks</h1>
+    <p class="text-end mp3-hex">"Greatness, at any cost" - Dark Confidant</p>
+</header>
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a href="#" class="nav-link">Sign Out</a>
+        <a href="#" id="create-deck" class="nav-link">
+            Create Deck
+            <iconify-icon icon="charm:cards"></iconify-icon>
+        </a>
+    </div>
+</nav>
+<main class="container">
+    <section class="row pt-5">
+        <div class="card deck-bg">
+            <div class="card-body">
+                <h5 class="card-title text-center deck-title">My Decks</h5>
+                <ul class="list-group">
+                    {{!-- For each deck this user has, present the name that is stored in the database --}}
+                    {{#if logged_in}}
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="../public/js/decks.js"></script>
