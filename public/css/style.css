@@ -97,7 +97,7 @@ nav {
     background-color: var(--mp5);
 }
 
-#loginPortal {
+.loginPortal {
     background: url('../assets/images/login-portal-image.jpg');
     background-size: 100% 100%;
     border: #04BF9D solid 2px;
@@ -106,7 +106,7 @@ nav {
     margin: 0 auto;
 }
 
-#loginPortal button {
+.loginPortal button {
     font-family: 'Cinzel', serif;
     font-size: 1.5rem;
     color: #f2f2f2;
