@@ -28,7 +28,7 @@ router.get('/decks', withAuth, async (req, res) => {
 
   router.get('/decklist', withAuth, async (req, res) => {
     try {
-      const userData = await User.findByPk(req.session.user_id, {
+      const userData = await User.findByPk(req.session.id, {
         attributes: { exclude: ['password'] },
         include: [{ model: Deck }],
       });
