@@ -53,5 +53,15 @@ router.get('/decks', withAuth, async (req, res) => {
   
     res.render("login");
   });
+
+  router.get("/register", (req, res) => {
+    // check if already logged in and redirect to /decks
+    if (req.session.logged_in) {
+      res.redirect("/decks");
+      return;
+    }
+  
+    res.render("register");
+  });
   
   module.exports = router;
