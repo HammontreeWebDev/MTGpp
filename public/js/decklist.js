@@ -6,4 +6,5 @@ let cardSearch = $('#card-search');
 
 // list cards based on user input
 const results = Scry.Cards.autoCompleteName(`${cardSearch.value}`);
+// logging for now to test
 results.forEach(console.log);
