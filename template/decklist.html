@@ -17,25 +17,42 @@
 <body>
     <header class="container-fluid">
         <h1 class="display-2 text-center">MTG++ Deck List</h1>
+        <!-- Fun MTG card quotes, possibly make it a random quote each time the page is loaded / refreshed -->
         <p class="text-end mp3-hex">"That's a lotta nuggets." - Jaya Ballard, Task Mage</p>
     </header>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a href="#" id="sign-out" class="nav-link">Sign Out</a>
-            <a href="#" id="home" class="nav-link">
-                Home
-            </a>
+            <a class="navbar-brand" href="#">Wizards of the Cache</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a href="#" id="home" class="nav-link px-5">Home</a>
+                    <a href="#" id="sign-out" class="nav-link">Sign Out</a>
+                </div>
+            </div>
         </div>
     </nav>
     <main class="d-flex">
-        <aside class="mx-4 my-4 d-flex">
-            <div class="card">
+        <aside class="mx-4 my-4 d-flex flex-column">
+            <!-- Search Field -->
+            <div class="card custom-card">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Search:</h5>
-                  <input id="card-search" class="text-center" type="text" value="" placeholder="Card Name">
-                  <p id="card-results"></p>
+                    <h5 class="card-title text-center search-title">Search:</h5>
+                    <input id="card-search" class="text-center" type="text" value="" placeholder="Card Name">
+                    <p id="card-results"></p>
                 </div>
-              </div>
+            </div>
+            <!-- Card Art Preview -->
+            <div class="card custom-card">
+                <div class="card-body">
+                    <h5 class="card-title text-center search-title">Card Name</h5>
+
+                </div>
+            </div>
         </aside>
     </main>
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>

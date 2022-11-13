@@ -190,3 +190,22 @@ nav {
     color: white;
     cursor: pointer;
 }
+/* custom card is used in decklist page for the <aside> cards*/
+.custom-card {
+    height: 20rem;
+    width: 20rem;
+    margin-top: 5%;
+    border: 2px solid var(--am1);
+    background-color: var(--mp3);
+    background-image: url('../assets/images/login-portal-image.jpg');
+    background-size: cover;
+}
+.search-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #f2f2f2;
+    text-shadow:
+        0 0 7px #AE4AD9,
+        0 0 10px #E68DF2,
+        0 0 21px #fff;
+}
