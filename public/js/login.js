@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/decks');
+      location.replace('/decks');
     } else {
       alert('Failed to log in.');
     }
