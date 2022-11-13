@@ -1,12 +1,11 @@
 const router = require('express').Router();
-const path = require('path');
 const { Deck, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET route for homepage
-router.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/index.html'))
-)
+router.get('/', (req, res) => {
+  res.render("homepage");
+});
 
 // middleware requiring authorization access to route
 router.get('/decks', withAuth, async (req, res) => {
