@@ -13,6 +13,7 @@
     --am4: #5FCDD9;
     --am5: #172026;
 }
+
 /* Color Splash in HEX */
 .mp1-hex {
     color: #E68DF2;
@@ -60,8 +61,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: rgb(16,6,38);
-    background: linear-gradient(90deg, rgba(16,6,38,1) 0%, rgba(0,0,0,1) 50%, rgba(16,6,38,1) 100%);
+    background: rgb(16, 6, 38);
+    background: linear-gradient(90deg, rgba(16, 6, 38, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(16, 6, 38, 1) 100%);
 }
 
 header {
@@ -102,7 +103,7 @@ nav {
     background-size: 100% 100%;
     border: #04BF9D solid 2px;
     border-radius: 5px;
-    width: 25%; 
+    width: 25%;
     margin: 0 auto;
 }
 
@@ -114,7 +115,7 @@ nav {
         0 0 7px #AE4AD9,
         0 0 10px #E68DF2,
         0 0 21px #fff;
-        border: #AE4AD9 solid 2px;
+    border: #AE4AD9 solid 2px;
     background-color: #000;
     width: 100%;
 }
@@ -130,9 +131,9 @@ nav {
     font-family: 'Gruppo', serif;
     font-size: 1.5rem;
     text-shadow:
-    0 0 7px #04BFAD,
-    0 0 10px #04BFAD,
-    0 0 21px #fff;
+        0 0 7px #04BFAD,
+        0 0 10px #04BFAD,
+        0 0 21px #fff;
 }
 
 .navbar-brand {
@@ -145,6 +146,7 @@ nav {
         0 0 21px #fff,
         0 0 42px #0fa;
 }
+
 /* Styling for the titles used on decks and decklist pages */
 .deck-title {
     font-family: 'Cinzel', serif;
@@ -158,11 +160,13 @@ nav {
         0 0 92px #04BFAD;
     font-size: 200%;
 }
+
 /* bg color for the card used on decks page */
 .deck-bg {
     background-color: var(--mp5);
     border: 3px solid var(--mp3);
 }
+
 .deck-names {
     background-color: var(--am5);
     color: var(--mp1);
@@ -170,23 +174,132 @@ nav {
     margin-bottom: 2%;
     font-family: 'Merienda', serif;
 }
+
 .editBtn {
     color: var(--mp1);
     background-color: transparent;
     border: transparent;
 }
+
 .editBtn:hover {
     color: white;
 }
+
 .deleteBtn {
     color: var(--mp1);
     background-color: transparent;
-    border: transparent; 
+    border: transparent;
 }
+
 .deleteBtn:hover {
     color: white;
 }
+
 .deck-link:hover {
     color: white;
     cursor: pointer;
+}
+
+/* custom card is used in decklist page for the <aside> cards*/
+.custom-card {
+    height: 25rem;
+    width: 100%;
+    margin-top: 5%;
+    border: 2px solid var(--am1);
+    background-color: var(--mp3);
+    background-image: url('../assets/images/login-portal-image.jpg');
+    background-size: cover;
+    box-shadow: 0 0 5px 2px var(--mp1);
+}
+
+.search-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #f2f2f2;
+    text-shadow:
+        0 0 7px #AE4AD9,
+        0 0 10px #E68DF2,
+        0 0 21px #fff;
+}
+
+#card-search {
+    width: 100%;
+}
+
+.deck-list-body {
+    height: 50rem;
+    width: 100%;
+    margin-top: 2%;
+    border: 2px solid var(--am1);
+    background-color: var(--mp3);
+    background-image: url('../assets/images/login-portal-image.jpg');
+    background-size: cover;
+    box-shadow: 0 0 5px 2px var(--mp1);
+    /* If the amount of cards in their deck exceeds the available space, the user will be able to scroll */
+    overflow: scroll;
+}
+
+#deck-list {
+    width: 80%;
+}
+
+#side-nav {
+    width: 20%;
+}
+
+.list-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #f2f2f2;
+    text-shadow:
+        0 0 7px #AE4AD9,
+        0 0 10px #E68DF2,
+        0 0 21px #fff;
+    margin-top: 1%;
+    width: 100%;
+    border: 1px solid var(--am2);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 1rem;
+}
+
+.no-list {
+    list-style: none;
+}
+
+.card-type {
+    font-family: 'Cinzel', serif;
+    color: #f2f2f2;
+    text-shadow:
+        0 0 7px #04BFAD,
+        0 0 10px #04BFAD,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #04BFAD;
+    font-size: 1.35rem;
+    text-align: center;
+    border: 1px solid var(--am4);
+    border-radius: 1rem;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.added-card {
+    font-family: 'Merienda', serif;
+    color: var(--mp1);
+    font-size: 1rem;
+}
+
+.deck-list-btns {
+    color: var(--mp1);
+    background-color: transparent;
+    border: transparent;
+    margin-left: 2%;
+    font-size: 2rem;
+}
+.deck-list-btns:hover {
+    cursor: pointer;
+    color: white;
+    font-size: 2.5rem;
 }
