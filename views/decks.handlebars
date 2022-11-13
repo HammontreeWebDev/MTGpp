@@ -1,4 +1,3 @@
-{{#if logged_in}}
 <header class="container-fluid">
     <h1 class="display-2 text-center">MTG++ Decks</h1>
     <p class="text-end mp3-hex">"Greatness, at any cost" - Dark Confidant</p>
@@ -18,10 +17,50 @@
             <div class="card-body">
                 <h5 class="card-title text-center deck-title">My Decks</h5>
                 <ul class="list-group">
-                    {{!-- For each deck this user has, present the name that is stored in the database --}}  
-                    {{#each decks as | Deck}}  
-
-                    {{/each}}    
+                    <li class="list-group-item deck-names py-3 d-flex justify-content-between">
+                        <p class="deck-link">An Item</p>
+                        <span>
+                            <button class="editBtn">
+                                <iconify-icon icon="fa-regular:edit"></iconify-icon>
+                            </button>
+                            <button class="deleteBtn">
+                                <iconify-icon icon="fluent:delete-off-20-regular"></iconify-icon>
+                            </button>
+                        </span>
+                    </li>
+                    <li class="list-group-item deck-names py-3 d-flex justify-content-between">
+                        <p class="deck-link">Another Item</p>
+                        <span>
+                            <button class="editBtn">
+                                <iconify-icon icon="fa-regular:edit"></iconify-icon>
+                            </button>
+                            <button class="deleteBtn">
+                                <iconify-icon icon="fluent:delete-off-20-regular"></iconify-icon>
+                            </button>
+                        </span>
+                    </li>
+                    <li class="list-group-item deck-names py-3 d-flex justify-content-between">
+                        <p class="deck-link">The Best Item</p>
+                        <span>
+                            <button class="editBtn">
+                                <iconify-icon icon="fa-regular:edit"></iconify-icon>
+                            </button>
+                            <button class="deleteBtn">
+                                <iconify-icon icon="fluent:delete-off-20-regular"></iconify-icon>
+                            </button>
+                        </span>
+                    </li>
+                    <li class="list-group-item deck-names py-3 d-flex justify-content-between">
+                        <p class="deck-link">An Item That Is Also Good But Not The Best</p>
+                        <span>
+                            <button class="editBtn">
+                                <iconify-icon icon="fa-regular:edit"></iconify-icon>
+                            </button>
+                            <button class="deleteBtn">
+                                <iconify-icon icon="fluent:delete-off-20-regular"></iconify-icon>
+                            </button>
+                        </span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -31,4 +70,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="./js/decks.js"></script>
-{{/if}}
