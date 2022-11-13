@@ -60,12 +60,21 @@
                 <!-- Deck Title -->
                 <div class="card-body">
                     <h5 class="card-title text-center list-title">(Deck Name)
-                    <span>
-                        <button class="edit-deck-name" title="Edit My Deck">
-                            <iconify-icon icon="fa-regular:edit"></iconify-icon>
-                        </button>
+                        <span>
+                            <button class="edit-deck-name deck-list-btns" title="Edit My Deck">
+                                <iconify-icon icon="fa-regular:edit"></iconify-icon>
+                            </button>
                         </span>
                     </h5>
+                    <!-- Delete and Save buttons -->
+                    <div class="btn-group">
+                        <button class="save-deck deck-list-btns">
+                            <iconify-icon icon="fluent:save-arrow-right-24-filled"></iconify-icon>
+                        </button>
+                        <button class="delete-deck deck-list-btns">
+                            <iconify-icon icon="fluent:delete-off-20-regular"></iconify-icon>
+                        </button>
+                    </div>
                 </div>
                 <!-- Added Cards -->
                 <div class="card-body card-lists d-flex flex-wrap">

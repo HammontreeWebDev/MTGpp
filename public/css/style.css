@@ -263,20 +263,6 @@ nav {
     border-radius: 1rem;
 }
 
-.edit-deck-name {
-    color: var(--mp1);
-    background-color: transparent;
-    border: transparent;
-    margin-left: 2%;
-    font-size: 2rem;
-}
-
-.edit-deck-name:hover {
-    cursor: pointer;
-    color: white;
-    font-size: 2.5rem;
-}
-
 .no-list {
     list-style: none;
 }
@@ -303,4 +289,17 @@ nav {
     font-family: 'Merienda', serif;
     color: var(--mp1);
     font-size: 1rem;
+}
+
+.deck-list-btns {
+    color: var(--mp1);
+    background-color: transparent;
+    border: transparent;
+    margin-left: 2%;
+    font-size: 2rem;
+}
+.deck-list-btns:hover {
+    cursor: pointer;
+    color: white;
+    font-size: 2.5rem;
 }
