@@ -36,8 +36,8 @@
             </div>
         </div>
     </nav>
-    <main class="d-flex">
-        <aside class="mx-4 my-4 d-flex flex-column">
+    <main class="d-flex flex-sm-column flex-md-column flex-lg-row">
+        <aside id="side-nav" class="mx-4 my-4 d-flex flex-column">
             <!-- Search Field -->
             <div class="card custom-card">
                 <div class="card-body">
@@ -55,8 +55,12 @@
             </div>
         </aside>
         <!-- Deck List -->
-        <section id="deck-list">
-
+        <section id="deck-list" class="mx-4 my-4 d-flex justify-content-end">
+            <div class="card deck-list-body">
+                <div class="card-body">
+                    <h5 class="card-title text-center search-title">(Deck Name)</h5>
+                </div>
+            </div>
         </section>
     </main>
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>

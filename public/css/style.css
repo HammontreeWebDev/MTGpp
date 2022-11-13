@@ -193,7 +193,7 @@ nav {
 /* custom card is used in decklist page for the <aside> cards*/
 .custom-card {
     height: 25rem;
-    width: 20rem;
+    width: 100%;
     margin-top: 5%;
     border: 2px solid var(--am1);
     background-color: var(--mp3);
@@ -212,4 +212,22 @@ nav {
 }
 #card-search {
     width: 100%;
+}
+.deck-list-body {
+    height: 50rem;
+    width: 100%;
+    margin-top: 2%;
+    border: 2px solid var(--am1);
+    background-color: var(--mp3);
+    background-image: url('../assets/images/login-portal-image.jpg');
+    background-size: cover;
+    box-shadow: 0 0 5px 2px var(--mp1);
+    /* If the amount of cards in their deck exceeds the available space, the user will be able to scroll */
+    overflow: scroll;
+}
+#deck-list {
+    width: 80%;
+}
+#side-nav {
+    width: 20%;
 }
