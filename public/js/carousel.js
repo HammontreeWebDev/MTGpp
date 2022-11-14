@@ -7,11 +7,11 @@ async function randomImg() {
     console.log('searching...');
     const card = await Scry.Cards.random()
     randomImages = (card.image_uris.art_crop);
-    }
-    console.log(randomImages);
     const randImg = document.createElement(`<img src='${randomImages}'>`)
     const carousel = document.getElementById('carouselImages');
     carousel.appendChild(randImg);
+    }
+console.log(randomImages);
 }
 
 randomImg();
