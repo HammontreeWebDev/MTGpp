@@ -303,3 +303,7 @@ nav {
     color: white;
     font-size: 2.5rem;
 }
+#create-deck {
+    background-color: transparent;
+    border: none;
+}
