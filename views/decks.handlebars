@@ -4,7 +4,7 @@
     </header>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Wizards of the Cache</a>
+            <a class="navbar-brand" href="/">Wizards of the Cache</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,9 +26,10 @@
                 <div class="card-body">
                     <h5 class="card-title text-center deck-title">My Decks</h5>
                     <ul class="list-group">
+                        {{!-- iterate through decks that belong to the current user and insert into document --}}
                         {{#each decks as |Deck|}}
                         <li class="list-group-item deck-names py-3 d-flex justify-content-between">
-                            <p class="deck-link">{{deck.deck_name}}</p>
+                            <p class="deck-link">{{deck_name}}</p>
                             <span>
                                 <button class="editBtn">
                                     <iconify-icon icon="fa-regular:edit"></iconify-icon>
