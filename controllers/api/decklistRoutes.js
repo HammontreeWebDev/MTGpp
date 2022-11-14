@@ -22,7 +22,7 @@ router.post('/', withAuth, async (req, res) => {
     try {
       const newCard = await Deck.create({
         deck_list: req.body.deck_list,
-        user_id: req.session.user_id,
+        user_id: req.session.id,
       },
       {
         where: {
@@ -43,7 +43,7 @@ router.delete('/:id', withAuth, async (req, res) => {
       const cardData = await Deck.destroy({
         where: {
           id: req.params.id,
-          user_id: req.session.user_id,
+          user_id: req.session.id,
         },
       });
 
