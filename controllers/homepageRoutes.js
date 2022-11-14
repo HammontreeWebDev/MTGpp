@@ -16,6 +16,7 @@ router.get('/decks', withAuth, async (req, res) => {
       });
   
       const user = userData.get({ plain: true });
+      console.log(userData);
   
       res.render("decks", {
         ...user,
