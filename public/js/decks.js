@@ -1,6 +1,8 @@
 // name vars
 const createDeckBtn = document.getElementById('create-deck');
 const signOutBtn = document.getElementById('sign-out');
+const deleteBtn = document.getElementsByClassName('deleteBtn');
+
 
 // function to create deck
 function createDeckHandler() {
@@ -12,6 +14,14 @@ function createDeckHandler() {
     })
 }
 
+// function to delete specific deck
+function deleteDeckHandler() {
+  fetch(`api/deck`, {
+    method: 'DELETE',
+    body: JSON.stringify({id:deleteBtn.dataset.deckId}),
+    headers: { 'Content-Type': 'application/json' },
+  });
+}
 // function expression to sign out
 const signOutHandler = async () => {
     const response = await fetch('/api/user/logout', {
@@ -30,3 +40,7 @@ const signOutHandler = async () => {
 // event listners
 createDeckBtn.addEventListener('click', createDeckHandler);
 signOutBtn.addEventListener('click', signOutHandler);
+
+for (let i = 0; i < deleteBtn.length; i++) {
+  deleteBtn[i].addEventListener('click', deleteDeckHandler);
+}
