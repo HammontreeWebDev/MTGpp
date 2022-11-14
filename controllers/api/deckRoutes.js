@@ -33,9 +33,7 @@ router.post("/", async (req, res) => {
             deck_name: req.body.deck_name,
         });
         req.session.save(() => {
-            req.session.user_id = deckData.id;
             req.session.logged_in = true;
-
             res.status(200).json(deckData);
     });
     } catch (err) {
