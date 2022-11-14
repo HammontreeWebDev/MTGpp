@@ -9,21 +9,24 @@ router.get('/', (req, res) => {
 
 // middleware requiring authorization access to route
 router.get('/decks', withAuth, async (req, res) => {
-    try {
-      const userData = await User.findByPk(req.session.id, {
-        attributes: { exclude: ['password'] },
-        include: [{ model: Deck }],
-      });
+    // try {
+    //   const userData = await User.findByPk(req.session.id, {
+    //     attributes: { exclude: ['password'] },
+    //     include: [{ model: Deck }],
+    //   });
   
-      const user = userData.get({ plain: true });
+    //   const user = userData.get({ plain: true });
   
-      res.render("decks", {
-        ...user,
-        logged_in: true
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
+    //   res.render("decks", {
+    //     ...user,
+    //     logged_in: true
+    //   });
+    // } catch (err) {
+    //   res.status(500).json(err);
+    // }
+    res.render("decks", {
+      logged_in: true
+    });
   });
 
   router.get('/decklist', withAuth, async (req, res) => {
