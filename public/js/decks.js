@@ -3,6 +3,7 @@ const createDeckBtn = document.getElementById('create-deck');
 const signOutBtn = document.getElementById('sign-out');
 const deleteBtn = document.getElementsByClassName('deleteBtn');
 
+
 // function to create deck
 function createDeckHandler() {
     let answer = prompt('Please name your deck:');
@@ -17,7 +18,7 @@ function createDeckHandler() {
 function deleteDeckHandler() {
   fetch(`api/deck`, {
     method: 'DELETE',
-    body: JSON.stringify({id:17}),
+    body: JSON.stringify({id:deleteBtn.dataset.deckId}),
     headers: { 'Content-Type': 'application/json' },
   });
 }
