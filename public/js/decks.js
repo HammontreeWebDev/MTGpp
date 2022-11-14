@@ -24,12 +24,19 @@ async function createDeckHandler() {
 }
 
 // function to delete specific deck
-function deleteDeckHandler(event) {
-  fetch(`api/deck`, {
+async function deleteDeckHandler() {
+
+ const del = await fetch(`api/deck`, {
     method: 'DELETE',
-    body: JSON.stringify({ id: event.target.dataset.deckId }),
+    body: JSON.stringify({ id: this.dataset.deckId}),
     headers: { 'Content-Type': 'application/json' },
   });
+  if (del.ok) {
+    document.location.replace('/decks');
+  }
+  else {
+    console.error(new Error());
+  }
 
 }
 // function expression to sign out
