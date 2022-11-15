@@ -46,11 +46,13 @@ cardSubmit.submit(function(event) {
         })
         // Add selected card information to array of objects
         .then((response) => {
+            console.log(response);
             cardArray.push(
                 {
                     name: response.name,
                     id: response.id,
                     art: response.image_uris.border_crop,
+                    type: response.type_line,
                 }
             )
             console.log(cardArray);
