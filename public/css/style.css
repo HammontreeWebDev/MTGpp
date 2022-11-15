@@ -318,14 +318,15 @@ nav {
     background-color: transparent;
     border: none;
 }
-#card-name-results {
+/* #card-name-results {
     font-family: 'Merienda', serif;
     color: var(--mp1);
     font-size: 1rem;
     text-align: center;
     margin: auto;
     height: 50%;
-}
+    max-height: 50%;
+} */
 /* dynamically created button in decklist.js */
 .result-btn {
     border: none;
@@ -335,3 +336,17 @@ nav {
 .result-btn:hover {
     color: white;
 }
+.ui-autocomplete {
+    max-height: 19rem;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    font-family: 'Merienda', serif;
+    color: var(--am1);
+    background-color: rgba(0, 0, 0, .9);
+  }
+  .ui-menu-item-wrapper:hover {
+    background-color: var(--mp1);
+    color: var(--am5);
+    font-size: 120%;
+  }
