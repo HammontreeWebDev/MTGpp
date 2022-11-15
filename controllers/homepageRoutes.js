@@ -34,7 +34,7 @@ router.get("/decks", withAuth, async (req, res) => {
     }
 });
 
-router.put("/decklist", withAuth, async (req, res) => {
+router.get("/decklist/:id", withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ["password"] },
@@ -42,10 +42,10 @@ router.put("/decklist", withAuth, async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
-
+        console.log(user);
         let deck;
-        user.Deck.forEach((element) => {
-            if (element.id === req.body.deck_id) {
+        user.decks.forEach((element) => {
+            if (element.id == req.params.id) {
                 deck = element;
             }
         });
@@ -54,7 +54,7 @@ router.put("/decklist", withAuth, async (req, res) => {
             res.render("decklist", deck);
         } else {
             res.status(404).json({
-                message: `A deck with id: ${req.body.deck_id} does not exist`,
+                message: `A deck with id: ${req.params.id} does not exist`,
             });
         }
     } catch (err) {

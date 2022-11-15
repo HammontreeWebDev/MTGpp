@@ -23,16 +23,14 @@ async function createDeckHandler() {
 
 // function to edit deck contents - this will re-route to decklist
 async function editDeckHandler() {
-  const edit = await fetch(`api/decklist/${this.dataset.editDeckId}`, {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  });
+  const edit = await fetch(`/decklist/${this.dataset.editDeckId}`);
 
+  console.log(this.dataset.editDeckId);
   // we can see in dev tools that the proper id of the deck is being passed in
   console.log(edit);
 
   if (edit.ok) {
-    document.location.replace('/decklist');
+    document.location.replace(`/decklist/${this.dataset.editDeckId}`);
   }
   else {
     console.error(new Error());
