@@ -4,7 +4,8 @@ let searchResults = $("#card-name-results");
 
 // function to handle the autocomplete api call
 function handleAutocomplete() {
-    fetch(`api/scry/autocomplete/${this.value}`)
+    if (this.value) {
+        fetch(`api/scry/autocomplete/${this.value}`)
         .then((response) => {
             return response.json();
         })
@@ -14,6 +15,7 @@ function handleAutocomplete() {
                 source: response,
             });
         });
+    }
 }
 
 cardSearch.on("input", handleAutocomplete);
