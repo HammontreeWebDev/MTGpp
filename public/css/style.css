@@ -307,3 +307,20 @@ nav {
     background-color: transparent;
     border: none;
 }
+#card-name-results {
+    font-family: 'Merienda', serif;
+    color: var(--mp1);
+    font-size: 1rem;
+    text-align: center;
+    margin: auto;
+    height: 50%;
+}
+/* dynamically created button in decklist.js */
+.result-btn {
+    border: none;
+    background-color: transparent;
+    color: var(--am4);
+}
+.result-btn:hover {
+    color: white;
+}
