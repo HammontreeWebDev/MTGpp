@@ -119,11 +119,14 @@ nav {
     background-color: #000;
     width: 100%;
 }
+#myCarousel {
+    margin: 0 auto;
+    width: 50%;
+}
 
 .carousel-inner {
     margin: auto;
-    width: 25%;
-    max-height: 400px !important;
+    width: 80%;
 }
 
 .nav-link {
