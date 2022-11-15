@@ -4,6 +4,9 @@ let cardSubmit = $("#card-submit");
 let cardArt = $("#card-art-results");
 let cardName = $("#card-name");
 
+// define array that will be used to store card information as well as push to db
+let cardArray = [];
+
 // function to handle the autocomplete api call
 function handleAutocomplete() {
     if (this.value) {
@@ -20,7 +23,7 @@ function handleAutocomplete() {
     }
 }
 
-// function / submit handler to show card art when a card is chosen
+// function / submit handler to show card art/ name/ and add card information to an array for chosen cards
 cardSubmit.submit(function(event) {
 
     event.preventDefault();
@@ -34,12 +37,24 @@ cardSubmit.submit(function(event) {
                 throw new Error(response.status)
             }
         })
+        // Card Art Render Section
         .then((response) => {
-            console.log(response.name);
+            // console.log(response.name);
             cardArt.attr('src', response.image_uris.border_crop);
             cardName.text(response.name);
-        }
-        )
+            return response;
+        })
+        // Add selected card information to array of objects
+        .then((response) => {
+            cardArray.push(
+                {
+                    name: response.name,
+                    id: response.id,
+                    art: response.image_uris.border_crop,
+                }
+            )
+            console.log(cardArray);
+        })
         .catch((error) => {
             console.log(error);
         }) 
