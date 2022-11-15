@@ -1,0 +1,129 @@
+<header class="container-fluid">
+        <h1 class="display-2 text-center">MTG++ Deck List</h1>
+        <!-- Fun MTG card quotes, possibly make it a random quote each time the page is loaded / refreshed -->
+        <p class="text-end mp3-hex">"That's a lotta nuggets." - Jaya Ballard, Task Mage</p>
+    </header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wizards of the Cache</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a href="/decks" id="my-decks" class="nav-link px-5">My Decks</a>
+                    <a href="#" id="sign-out" class="nav-link">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="d-flex flex-sm-column flex-md-column flex-lg-row">
+        <aside id="side-nav" class="mx-4 my-4 d-flex flex-column">
+            <!-- Search Field -->
+            <div class="card custom-card">
+                <div class="card-body">
+                    <h5 class="card-title text-center search-title">Search:</h5>
+                    <input id="card-search" class="text-center" type="text" value="" placeholder="Card Name">
+                    <p id="card-name-results"></p>
+                </div>
+            </div>
+            <!-- Card Art Preview -->
+            <div class="card custom-card">
+                <div class="card-body">
+                    <h5 class="card-title text-center search-title">(Card Name)</h5>
+                    <p id="card-art-results"></p>
+                </div>
+            </div>
+        </aside>
+        <!-- Deck List -->
+        <section id="deck-list" class="mx-4 my-4 d-flex justify-content-end">
+            <div class="card deck-list-body">
+                <!-- Deck Title -->
+                <div class="card-body">
+                    <h5 class="card-title text-center list-title">(Deck Name)
+                        <span>
+                            <button class="edit-deck-name deck-list-btns" title="Edit My Deck">
+                                <iconify-icon icon="fa-regular:edit"></iconify-icon>
+                            </button>
+                        </span>
+                    </h5>
+                    <!-- Delete and Save buttons -->
+                    <div class="btn-group">
+                        <button class="save-deck deck-list-btns">
+                            <iconify-icon icon="fluent:save-arrow-right-24-filled"></iconify-icon>
+                        </button>
+                        <button class="delete-deck deck-list-btns">
+                            <iconify-icon icon="fluent:delete-off-20-regular"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+                <!-- Added Cards -->
+                <div class="card-body card-lists d-flex flex-wrap">
+                    <!-- will need to add logic that creates a list based on the type of card selected... This list will also have the number of a certain card added to it, within... All these lists are set up to wrap inherently... Also, if the space exceeds the available space, a scrollbar will appear, instead of making the page larger -->
+                    <ul class="no-list">
+                        <h5 class="card-type">Type 1</h5>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                    </ul>
+                    <ul class="no-list">
+                        <h5 class="card-type">Type 2</h5>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                    </ul>
+                    <ul class="no-list">
+                        <h5 class="card-type">Type 3</h5>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                    </ul>
+                    <ul class="no-list">
+                        <h5 class="card-type">Type 4</h5>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                    </ul>
+                    <ul class="no-list">
+                        <h5 class="card-type">Type 5</h5>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                    </ul>
+                    <ul class="no-list">
+                        <h5 class="card-type">Type 6</h5>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                    </ul>
+                    <ul class="no-list">
+                        <h5 class="card-type">Type 7</h5>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                        <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="./js/decklist.js"></script>
