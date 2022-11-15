@@ -27,7 +27,7 @@ async function editDeckHandler() {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
   });
-  
+
   // we can see in dev tools that the proper id of the deck is being passed in
   console.log(edit);
 
@@ -42,9 +42,9 @@ async function editDeckHandler() {
 // function to delete specific deck
 async function deleteDeckHandler() {
 
- const del = await fetch(`api/deck`, {
+  const del = await fetch(`api/deck`, {
     method: 'DELETE',
-    body: JSON.stringify({ id: this.dataset.deckId}),
+    body: JSON.stringify({ id: this.dataset.deckId }),
     headers: { 'Content-Type': 'application/json' },
   });
 
