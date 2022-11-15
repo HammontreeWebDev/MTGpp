@@ -1,10 +1,16 @@
 const router = require('express').Router();
 const { Deck, User } = require('../models');
 const withAuth = require('../utils/auth');
+const Scry = require("scryfall-sdk");
 
 // GET route for homepage
-router.get('/', (req, res) => {
-  res.render("homepage");
+router.get('/', async (req, res) => {
+  const randomCards = [];
+  for (let i = 0; i < 5; i++) {
+    const card = await Scry.Cards.random();
+    randomCards.push(card);
+  }
+  res.render("homepage", randomCards);
 });
 
 // middleware requiring authorization access to route
