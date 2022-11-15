@@ -1,6 +1,8 @@
 // element variables
 let cardSearch = $("#card-search");
 let cardSubmit = $("#card-submit");
+let cardArt = $("#card-art-results");
+let cardName = $("#card-name");
 
 // function to handle the autocomplete api call
 function handleAutocomplete() {
@@ -33,7 +35,9 @@ cardSubmit.submit(function(event) {
             }
         })
         .then((response) => {
-            console.log(response);
+            console.log(response.name);
+            cardArt.attr('src', response.image_uris.border_crop);
+            cardName.text(response.name);
         }
         )
         .catch((error) => {
