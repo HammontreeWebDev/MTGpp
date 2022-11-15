@@ -361,3 +361,10 @@ nav {
         0 0 1px #0fa,
         0 0 2px #04BFAD;
   }
+  #card-art-results {
+    max-width: 72%;
+  }
+  .art-card {
+    flex-flow: column wrap;
+    align-items: center;
+  }
