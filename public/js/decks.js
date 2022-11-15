@@ -23,6 +23,14 @@ async function createDeckHandler() {
 
 }
 
+// function to edit deck contents - this will re-route to decklist
+async function editDeckHandler() {
+  const edit = await fetch('api/deck', {
+    method: 'GET',
+    
+  })
+}
+
 // function to delete specific deck
 async function deleteDeckHandler() {
 
