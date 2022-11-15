@@ -1,24 +1,23 @@
-// require the SDK for scry
-const Scry = require("scryfall-sdk");
-
 // element variables
 let cardSearch = $("#card-search");
+let searchResults = $("#card-name-results");
 
-// list cards based on user input
-async function handleAutocomplete(event) {
-    const results = await Scry.Cards.autoCompleteName(`${event.target.value}`);
-
-    // logging for now to test
-    results.forEach(console.log);
-
-    cardSearch.autocomplete({
-        source: results,
-    });
+// function to handle the autocomplete api call
+function handleAutocomplete() {
+    fetch(`https://api.scryfall.com/cards/autocomplete?q=${this.value}`)
+        .then(response => {
+            return response.json()
+        })
+        .then(response => {
+            // console.log(response);
+            for (let i = 0; i < response.data.length; i++) {
+                let cardNames = response.data[i];
+                console.log(cardNames);
+                let button = $(`<button class="result-btn" value="">${cardNames}</button>`)
+                searchResults.append(button);
+            }
+        })
 }
-
-// async function handleSubmit(event) {
-//     const card = await Scry.Cards.byName(event.target.value);
-// }
 
 cardSearch.on("input", handleAutocomplete);
 // cardSearch.on("submit", handleSubmit);
