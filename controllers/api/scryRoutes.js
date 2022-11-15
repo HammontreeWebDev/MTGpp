@@ -35,6 +35,19 @@ router.get("/name/:name", async (req, res) => {
         console.error(err);
         res.status(500).json(err);
     }
+});
+
+router.get("/autocomplete/:name", async (req, res) => {
+    try {
+        const autocomplete = await Scry.Cards.autoCompleteName(req.params.name);
+        if (!autocomplete) {
+            res.status(404).json({ message: "No cards match provided string" });
+        }
+        res.status(200).json(autocomplete);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
 })
 
 module.exports = router;
