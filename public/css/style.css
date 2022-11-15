@@ -99,26 +99,38 @@ nav {
 }
 
 .loginPortal {
-    background: url('../assets/images/login-portal-image.jpg');
+    background: url('../assets/images/login-portal-image-b.jpg');
     background-size: 100% 100%;
     border: #04BF9D solid 2px;
     border-radius: 5px;
-    width: 25%;
+    width: 20%;
     margin: 0 auto;
 }
 
 .loginPortal button {
     font-family: 'Cinzel', serif;
     font-size: 1.5rem;
+    color: #100626;
+    text-shadow:
+        0 0 7px #04BFAD,
+        0 0 10px #04BFAD,
+        0 0 21px #fff;
+    border: #04BFAD solid 2px;
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    transition-duration: .2s;
+}
+
+.loginPortal button:hover {
+    background-color: #000;
+    border: #E68DF2 solid 2px;
     color: #f2f2f2;
     text-shadow:
         0 0 7px #AE4AD9,
         0 0 10px #E68DF2,
         0 0 21px #fff;
-    border: #AE4AD9 solid 2px;
-    background-color: #000;
-    width: 100%;
 }
+
 #myCarousel {
     margin: 1% auto;
     width: 50%;
