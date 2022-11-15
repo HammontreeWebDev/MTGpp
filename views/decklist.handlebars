@@ -25,17 +25,17 @@
         <div class="card custom-card">
             <div class="card-body">
                 <h5 class="card-title text-center search-title">Search:</h5>
-                <div id="card-name-results" class="ui-widget">
-                    <input id="card-search" class="text-center" type="text" value="" placeholder="Card Name">
+                <form id="card-submit" class="ui-widget">
+                    <input id="card-search" class="text-center input-field" type="text" placeholder="Card Name">
                     {{!-- dynamically created results --}}
-                </div>
+                </form>
             </div>
         </div>
         <!-- Card Art Preview -->
         <div class="card custom-card">
-            <div class="card-body">
-                <h5 class="card-title text-center search-title">(Card Name)</h5>
-                <p id="card-art-results"></p>
+            <div class="card-body art-card d-flex">
+                <h5 id="card-name" class="card-title text-center search-title"></h5>
+                <img src="" id="card-art-results"/>
             </div>
         </div>
     </aside>
@@ -51,14 +51,6 @@
                         </button>
                     </span>
                 </h5>
-                {{!-- {{/else}}
-                <h5 class="card-title text-center list-title">oops! I can't load your deck right now!
-                    <span>
-                        <button class="edit-deck-name deck-list-btns" title="Edit My Deck">
-                            <iconify-icon icon="fa-regular:edit"></iconify-icon>
-                        </button>
-                    </span>
-                </h5> --}}
                 <!-- Delete and Save buttons -->
                 <div class="btn-group">
                     <button class="save-deck deck-list-btns" title="Save My Changes">
