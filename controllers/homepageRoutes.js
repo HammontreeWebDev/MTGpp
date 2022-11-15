@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
     const card = await Scry.Cards.random();
     randomCards.push(card);
   }
+  console.log(randomCards);
   res.render("homepage", randomCards);
 });
 
