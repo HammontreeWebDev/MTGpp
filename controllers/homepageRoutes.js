@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
         randomCards.push(card);
     }
     console.log(randomCards);
-    res.render("homepage", randomCards);
+    res.render("homepage", {...randomCards, logged_in: req.session.logged_in});
 });
 
 // middleware requiring authorization access to route
