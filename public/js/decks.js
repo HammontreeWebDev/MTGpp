@@ -2,6 +2,7 @@
 const createDeckBtn = document.getElementById('create-deck');
 const signOutBtn = document.getElementById('sign-out');
 const deleteBtn = document.getElementsByClassName('deleteBtn');
+const editBtn = document.getElementsByClassName('editBtn');
 
 // function to create deck
 async function createDeckHandler() {
@@ -22,10 +23,14 @@ async function createDeckHandler() {
 
 // function to edit deck contents - this will re-route to decklist
 async function editDeckHandler() {
-  const edit = await fetch('api/deck', {
+  const edit = await fetch(`api/decklist/${this.dataset.editDeckId}`, {
     method: 'GET',
-    
+    headers: { 'Content-Type': 'application/json' },
   });
+  
+  // we can see in dev tools that the proper id of the deck is being passed in
+  console.log(edit);
+
   if (edit.ok) {
     document.location.replace('/decklist');
   }
@@ -42,6 +47,7 @@ async function deleteDeckHandler() {
     body: JSON.stringify({ id: this.dataset.deckId}),
     headers: { 'Content-Type': 'application/json' },
   });
+
   if (del.ok) {
     document.location.replace('/decks');
   }
@@ -71,4 +77,8 @@ signOutBtn.addEventListener('click', signOutHandler);
 
 for (let i = 0; i < deleteBtn.length; i++) {
   deleteBtn[i].addEventListener('click', deleteDeckHandler);
+}
+
+for (let i = 0; i < editBtn.length; i++) {
+  editBtn[i].addEventListener('click', editDeckHandler);
 }
