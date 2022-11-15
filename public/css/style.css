@@ -350,3 +350,14 @@ nav {
     color: var(--am5);
     font-size: 120%;
   }
+  .input-field {
+    background-color: rgba(0, 0, 0, .25);
+    color: #f2f2f2;
+    text-shadow:
+        0 0 1px #04BFAD,
+        0 0 2px #04BFAD,
+        0 0 1px #fff,
+        0 0 2px #0fa,
+        0 0 1px #0fa,
+        0 0 2px #04BFAD;
+  }
