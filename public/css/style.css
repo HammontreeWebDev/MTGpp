@@ -141,18 +141,18 @@ nav {
     width: 80%;
     border: #5A278C solid 3px;
     border-radius: 5px;
-    box-shadow: 
-    0 0 15px #fff,
-    0 0 25px rgb(179, 253, 238),
-    0 0 26px #0fa,
-    0 0 27px #0fa,
-    0 0 28px #04BFAD;
+    box-shadow:
+        0 0 15px #fff,
+        0 0 25px rgb(179, 253, 238),
+        0 0 26px #0fa,
+        0 0 27px #0fa,
+        0 0 28px #04BFAD;
 }
 
 .symbol {
     border: #5A278C solid 3px;
     border-radius: 120px;
-    box-shadow: 
+    box-shadow:
         0 0 15px #fff,
         0 0 16px #5A278C,
         0 0 17px #AE4AD9,
@@ -327,6 +327,20 @@ nav {
     font-family: 'Merienda', serif;
     color: var(--mp1);
     font-size: 1rem;
+    background-color: transparent;
+    border: none;
+}
+
+.added-card:hover {
+    color: white;
+    text-shadow:
+        0 0 1px #04BFAD,
+        0 0 2px #04BFAD,
+        0 0 1px #fff,
+        0 0 2px #0fa,
+        0 0 1px #0fa,
+        0 0 2px #04BFAD;
+    cursor: pointer;
 }
 
 .deck-list-btns {
@@ -336,15 +350,18 @@ nav {
     margin-left: 2%;
     font-size: 2rem;
 }
+
 .deck-list-btns:hover {
     cursor: pointer;
     color: white;
     font-size: 2.5rem;
 }
+
 .decks-btns {
     background-color: transparent;
     border: none;
 }
+
 /* #card-name-results {
     font-family: 'Merienda', serif;
     color: var(--mp1);
@@ -360,9 +377,11 @@ nav {
     background-color: transparent;
     color: var(--am4);
 }
+
 .result-btn:hover {
     color: white;
 }
+
 .ui-autocomplete {
     max-height: 19rem;
     overflow-y: auto;
@@ -371,13 +390,15 @@ nav {
     font-family: 'Merienda', serif;
     color: var(--am1);
     background-color: rgba(0, 0, 0, .9);
-  }
-  .ui-menu-item-wrapper:hover {
+}
+
+.ui-menu-item-wrapper:hover {
     background-color: var(--mp1);
     color: var(--am5);
     font-size: 120%;
-  }
-  .input-field {
+}
+
+.input-field {
     background-color: rgba(0, 0, 0, .25);
     color: #f2f2f2;
     text-shadow:
@@ -387,11 +408,18 @@ nav {
         0 0 2px #0fa,
         0 0 1px #0fa,
         0 0 2px #04BFAD;
-  }
-  #card-art-results {
+}
+
+#card-art-results {
     max-width: 72%;
-  }
-  .art-card {
+}
+
+.art-card {
     flex-flow: column wrap;
     align-items: center;
-  }
+}
+
+.card-count {
+    font-family: 'Cinzel', serif;
+    color: var(--am4);
+}
