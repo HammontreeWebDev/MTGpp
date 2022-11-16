@@ -6,7 +6,7 @@ let cardName = $("#card-name");
 let cardList = $("#card-list");
 let cardType = $(".card-type");
 
-let saveDeckBtn = $("#save-deck");
+let saveDeckBtn = $("#decklist-save-btn");
 let clearDeckBtn = $("#clear-deck");
 
 // define array that will be used to store card information as well as push to db
@@ -56,29 +56,26 @@ async function init() {
 }
 
 // save deck details to database
-function handleSaveDeck(event) {
-    // TODO: Replace with modal
-    let save = confirm("Are you sure you want to save your changes?");
-    if (save) {
-        fetch(`../api/decklist`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: {
-                deck_id: parseInt(location.pathname.split("/").pop()),
-                deck_list: JSON.stringify(
-                    cardArray.map((element) => {
-                        return {
-                            id: element.id,
-                            amount: 1, //TODO: placeholder
-                        };
-                    })
-                ),
-            },
-        });
-    }
+function handleSaveDeck() {
+    fetch(`../api/decklist`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: {
+            deck_id: parseInt(location.pathname.split("/").pop()),
+            deck_list: JSON.stringify(
+                cardArray.map((element) => {
+                    return {
+                        id: element.id,
+                        amount: 1, //TODO: placeholder
+                    };
+                })
+            ),
+        },
+    });
 }
+
 
 // clear deck changes
 function handleClearDeck(event) {
