@@ -51,8 +51,43 @@ async function init() {
                     type: element.type_line,
                 };
             });
-        });
-    // TODO: Render cards to page
+
+            return cardArray;
+
+        })
+        // TODO: Render cards to page
+        .then((cardArray) => {
+
+            console.log(cardArray);
+
+            for (i = 0; i < cardArray.length; i++) {
+
+                // console.log(cardArray[i].name);
+                // console.log(cardArray[i].type);
+
+                let typeResponse = cardArray[i].type;
+
+                let listId = typeResponse.split(" ")[0];
+
+                console.log(listId);
+                // console.log(typeResponse);
+
+                // If original type pulled from API includes 'creature', set id and title to creature
+                if (typeResponse.includes("Creature")) {
+                    listId = "Creature";
+                }
+
+                if (typeResponse.includes("Land")) {
+                    listId = "Land";
+                }
+
+                if (document.body.textContent.includes(listId)) {
+                    $(`#${listId}`).append(`
+            <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span></li>`);
+                }
+            }
+        })
+
 }
 
 // save deck details to database
@@ -123,19 +158,38 @@ cardSubmit.submit(function (event) {
             console.log(cardArray);
 
             function checkType() {
-                // remove hyphen then white space from response type to pass as created elements ID for card types
+                
                 let typeResponse = response.type_line;
 
-                let listId = typeResponse.split(" ")[0];
-                // let listId = first.toLowerCase();
+                let listId;
 
-                // If original type pulled from API includes 'creature', set id and title to creature
+                // Set the list Id based on what the response includes
                 if (typeResponse.includes("Creature")) {
                     listId = "Creature";
                 }
 
-                if (typeResponse.includes("Land")) {
+                else if (typeResponse.includes("Land")) {
                     listId = "Land";
+                }
+
+                else if (typeResponse.includes("Artifact")) {
+                    listId = "Artifact";
+                }
+
+                else if (typeResponse.includes("Enchantment")) {
+                    listId = "Enchantment";
+                }
+
+                else if (typeResponse.includes("Instant")) {
+                    listId = "Instant";
+                }
+
+                else if (typeResponse.includes("Sorcery")) {
+                    listId = "Sorcery";
+                }
+
+                else if (typeResponse.includes("Planeswalker")) {
+                    listId = "planeswalker";
                 }
 
                 // If the type of card exists, append the card name only to existing ID for that card type
