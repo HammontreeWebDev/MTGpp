@@ -25,7 +25,10 @@ router.put("/", withAuth, async (req, res) => {
             deck.deck_name = req.body.deck_name;
         }
         if (req.body.deck_list) {
+            // console.log(typeof req.body.deck_list, req.body.deck_list);
+            // console.log(typeof deck.deck_list, deck.deck_list);
             deck.deck_list = req.body.deck_list;
+            // console.log(typeof deck.deck_list, deck.deck_list);
         }
         await deck.save();
     } catch (err) {
