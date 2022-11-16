@@ -160,6 +160,10 @@ nav {
     width: 60%;
 }
 
+.col-center {
+    margin: auto;
+}
+
 .nav-link {
     color: #f2f2f2;
     font-family: 'Gruppo', serif;
