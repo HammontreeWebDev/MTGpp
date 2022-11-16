@@ -21,7 +21,9 @@ router.get("/:id", async (req, res) => {
 router.put("/", withAuth, async (req, res) => {
     try {
         const deck = await Deck.findByPk(req.body.deck_id);
-        deck.deck_name = req.body.deck_name;
+        if (req.body.deck_name) {
+            deck.deck_name = req.body.deck_name;
+        }
         if (req.body.deck_list) {
             deck.deck_list = req.body.deck_list;
         }
