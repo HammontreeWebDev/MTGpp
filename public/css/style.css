@@ -185,6 +185,72 @@ nav {
         0 0 42px #0fa;
 }
 
+/* MODAL styling */
+.modal-content {
+    background-color: rgba(0, 0, 0, .7);
+    border: #5A278C solid 2px;
+    border-radius: 5px;
+    box-shadow:
+        0 0 10px #fff,
+        0 0 11px #AE4AD9,
+        0 0 12px #E68DF2,
+        0 0 13px #fff;
+}
+
+.modal-title {
+    color: #f2f2f2;
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    text-shadow:
+        0 0 7px #5A278C,
+        0 0 10px #fff,
+        0 0 21px #E68DF2,
+        0 0 42px #AE4AD9;
+    text-align: center;
+}
+
+.modal-header {
+    margin: auto;
+}
+
+.modal-body {
+    color: #f2f2f2;
+    font-family: 'Gruppo', serif;
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.btn-primary-M {
+    font-family: 'Cinzel', serif;
+    color: #f2f2f2;
+    text-shadow:
+        0 0 5px #f2f2f2,
+        0 0 8px #E68DF2;
+    border: #E68DF2 solid 2px;
+}
+
+.btn-secondary-M {
+    font-family: 'Cinzel', serif;
+    color: #f2f2f2;
+    text-shadow:
+        0 0 5px #f2f2f2,
+        0 0 10px #04BFAD;
+    border: #04BFAD solid 2px;
+}
+
+.modal-footer button {
+    margin: auto;
+    background-color: #000;    
+}
+
+.modal-footer button:hover {
+    border: #fff solid 2px;
+    color: #f2f2f2;
+    box-shadow:
+        0 0 10px #fff,
+        0 0 15px #2A1459;
+}
+
 /* Styling for the titles used on decks and decklist pages */
 .deck-title {
     font-family: 'Cinzel', serif;

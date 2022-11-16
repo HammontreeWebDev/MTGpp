@@ -124,14 +124,21 @@ cardSubmit.submit(function (event) {
             function checkType() {
                 // remove hyphen then white space from response type to pass as created elements ID for card types
                 let typeResponse = response.type_line;
-                let replaceHyphen = typeResponse.replace("—", "");
-                let replaceWhiteSpace = $.trim(
-                    replaceHyphen.replace(/\s/g, "")
-                );
-                let listId = replaceWhiteSpace.toLowerCase();
+
+                let listId = typeResponse.split(' ')[0];
+                // let listId = first.toLowerCase();
+
+                // If original type pulled from API includes 'creature', set id and title to creature
+                if (typeResponse.includes('Creature')) {
+                     listId = 'Creature'
+                }
+
+                if (typeResponse.includes('Land')) {
+                    listId = 'Land'
+               }
 
                 // If the type of card exists, append the card name only to existing ID for that card type
-                if (document.body.textContent.includes(response.type_line)) {
+                if (document.body.textContent.includes(listId)) {
                     $(`#${listId}`).append(`
                     <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span></li>`);
                 }
@@ -141,7 +148,7 @@ cardSubmit.submit(function (event) {
                     console.log(listId);
 
                     cardList.append(`<ul id="${listId}" class="no-list">
-                    <h5 class="card-type" value="${response.type_line}">${response.type_line}</h5>
+                    <h5 class="card-type" value="${response.type_line}">${listId}</h5>
                     <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span></li></ul>`);
                 }
             }
