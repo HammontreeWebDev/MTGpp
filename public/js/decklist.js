@@ -28,8 +28,55 @@ function handleAutocomplete() {
     }
 }
 
+// initialize cardArray with deck info
+async function init() {
+    // Get deck id from url
+    let deck_id = parseInt(location.pathname.split("/").pop());
+
+    // Fetch collection using deck_id
+    fetch(`../api/scry/collection/${deck_id}`)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error(response.status);
+            }
+        })
+        .then((response) => {
+            cardArray = response.map((element) => {
+                return {
+                    name: element.name,
+                    id: element.id,
+                    art: element.image_uris.border_crop,
+                    type: element.type_line,
+                };
+            });
+        });
+}
+
 // save deck details to database
-function handleSaveDeck(event) {}
+function handleSaveDeck(event) {
+    // TODO: Replace with modal
+    let save = confirm("Are you sure you want to save your changes?");
+    if (save) {
+        fetch(`../api/decklist`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: {
+                deck_list: JSON.stringify(
+                    cardArray.map((element) => {
+                        return {
+                            id: element.id,
+                            amount: 1, //TODO: placeholder
+                        };
+                    })
+                ),
+            },
+        });
+    }
+}
 
 // clear deck changes
 function handleClearDeck(event) {
@@ -136,3 +183,5 @@ $(document).on(
     },
     ".added-card"
 );
+
+init();
