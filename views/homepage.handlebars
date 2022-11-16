@@ -71,7 +71,8 @@
 
 {{!-- Sign out modal --}}
 <div class="modal fade" id="sign-out-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  {{> modal}}
+  {{!-- <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirm Sign Out</h1>
@@ -85,7 +86,7 @@
         <button id="signoutOkay" type="button" class="btn btn-primary-M" data-bs-dismiss="modal">Yes, I'm sure!</button>
       </div>
     </div>
-  </div>
+  </div> --}}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
