@@ -8,6 +8,7 @@ let cardType = $(".card-type");
 
 let saveDeckBtn = $("#save-deck");
 let clearDeckBtn = $("#clear-deck");
+let renameDeckBtn = $("#edit-deck-name");
 
 // define array that will be used to store card information as well as push to db
 let cardArray = [];
@@ -85,6 +86,22 @@ function handleClearDeck(event) {
     }
 }
 
+// rename the deck
+function handleRenameDeck(event) {
+    // TODO: Replace with modal
+    let newName = prompt("Enter a new name for the deck:");
+    fetch(`../api/decklist`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            deck_id: parseInt(location.pathname.split("/").pop()),
+            deck_name: newName,
+        }),
+    });
+}
+
 // function / submit handler to show card art/ name/ and add card information to an array for chosen cards
 cardSubmit.submit(function (event) {
     event.preventDefault();
@@ -160,6 +177,7 @@ cardSearch.on("input", handleAutocomplete);
 
 saveDeckBtn.on("click", handleSaveDeck);
 clearDeckBtn.on("click", handleClearDeck);
+renameDeckBtn.on("click", handleRenameDeck);
 
 $(document).on(
     {
