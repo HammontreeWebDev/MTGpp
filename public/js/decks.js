@@ -1,12 +1,11 @@
 // name vars
 const createDeckBtn = document.getElementById('createDeckSave');
 const deleteBtn = document.getElementsByClassName('deleteBtn');
-const editBtn = document.getElementsByClassName('editBtn');
-const createDeckName = document.getElementById('createDeckName').value;
+const editBtn = document.getElementsByClassName('editBtn'); 
 
 // function to create deck
 async function createDeckHandler() {
-  let answer = createDeckName;
+  let answer = document.getElementById('createDeckName').value;
 
   const results = await fetch('api/deck', {
     method: 'POST',
