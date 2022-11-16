@@ -29,7 +29,7 @@
                         {{!-- iterate through decks that belong to the current user and insert into document --}}
                         {{#each decks as |Deck|}}
                         <li class="list-group-item deck-names py-3 d-flex justify-content-between">
-                            <p class="deck-link">{{deck_name}}</p>
+                            <p class="deck-link" data-edit-deck-id = "{{id}}">{{deck_name}}</p>
                             <span>
                                 <button class="editBtn" data-edit-deck-id = "{{id}}">
                                     <iconify-icon icon="fa-regular:edit"></iconify-icon>
