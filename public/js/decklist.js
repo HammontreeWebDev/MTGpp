@@ -67,13 +67,13 @@ cardSubmit.submit(function (event) {
                 // remove hyphen then white space from response type to pass as created elements ID for card types
                 let typeResponse = response.type_line;
                 let replaceHyphen = typeResponse.replace('—', '');
-                let replaceWhiteSpace = $.trim(replaceHyphen.replace(/\s/g,''));
+                let replaceWhiteSpace = $.trim(replaceHyphen.replace(/\s/g, ''));
                 let listId = replaceWhiteSpace.toLowerCase();
 
                 // If the type of card exists, append the card name only to existing ID for that card type
                 if (document.body.textContent.includes(response.type_line)) {
                     $(`#${listId}`).append(`
-                    <li class="added-card">${response.name}<span class="card-count">(# in Deck)</span></li>`);
+                    <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span></li>`);
                 }
 
                 // otherwise, create the ID, ul, and first li
@@ -83,18 +83,40 @@ cardSubmit.submit(function (event) {
 
                     cardList.append(`<ul id="${listId}" class="no-list">
                     <h5 class="card-type" value="${response.type_line}">${response.type_line}</h5>
-                    <li class="added-card">${response.name}<span class="card-count">(# in Deck)</span></li></ul>`);
+                    <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span></li></ul>`);
                 }
             }
-
         })
         .catch((error) => {
             console.log(error);
-        })
-
+        });
 });
 
 // Event Listeners:
 cardSearch.on("input", handleAutocomplete);
-// cardSearch.on("submit", handleSubmit);
-// cardSearch.submit(handleCardArt(event));
+
+$(document).on({
+    mouseenter: function () {
+        //fetch card information based on hovered card name
+        fetch(`../api/scry/name/${this.textContent}`)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+            else {
+                throw new Error(response.status)
+            }
+        })
+        .then((response) => {
+            // console.log(response);
+            // set card art area based on hovered card name
+            cardArt.attr('src', response.image_uris.border_crop);
+            cardName.text(response.name)
+        })
+    },
+    mouseleave: function () {
+        //stuff to do on mouse leave
+        cardArt.attr('src', '');
+    cardName.text('')
+    }
+}, ".added-card");

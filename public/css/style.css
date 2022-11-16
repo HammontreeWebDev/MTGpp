@@ -327,6 +327,8 @@ nav {
     font-family: 'Merienda', serif;
     color: var(--mp1);
     font-size: 1rem;
+    background-color: transparent;
+    border: none;
 }
 
 .deck-list-btns {
@@ -394,4 +396,8 @@ nav {
   .art-card {
     flex-flow: column wrap;
     align-items: center;
+  }
+  .added-card:hover {
+    color: white;
+    cursor: pointer;
   }
