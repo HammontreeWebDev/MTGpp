@@ -149,6 +149,16 @@ nav {
     0 0 28px #04BFAD;
 }
 
+.symbol {
+    border: #5A278C solid 3px;
+    border-radius: 120px;
+    box-shadow: 
+        0 0 15px #fff,
+        0 0 16px #5A278C,
+        0 0 17px #AE4AD9,
+        0 0 18px #E68DF2;
+}
+
 .nav-link {
     color: #f2f2f2;
     font-family: 'Gruppo', serif;
