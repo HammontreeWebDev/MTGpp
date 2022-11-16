@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Deck } = require("../../models");
-// const withAuth = require("../../utils/auth");
+const withAuth = require("../../utils/auth");
 
 // Get a list of decks for the user with id = :id
 router.get("/:id", async (req, res) => {
@@ -25,8 +25,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // Create a new deck
-// TODO: Check for authorization
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
     try {
         const deckData = await Deck.create({
             user_id: req.session.user_id,
@@ -43,8 +42,7 @@ router.post("/", async (req, res) => {
 });
 
 // Update an existing deck
-// TODO: Check for authorization
-router.put("/", async (req, res) => {
+router.put("/", withAuth, async (req, res) => {
     try {
         const deckData = await Deck.update(req.body, {
             where: {
@@ -64,8 +62,7 @@ router.put("/", async (req, res) => {
 });
 
 // Delete a deck
-// TODO: Check for authorization
-router.delete("/", async (req, res) => {
+router.delete("/", withAuth, async (req, res) => {
     try {
         const deckData = await Deck.destroy({
             where: {
