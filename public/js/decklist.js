@@ -65,7 +65,7 @@ function handleSaveDeck(event) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: {
+            body: JSON.stringify({
                 deck_id: parseInt(location.pathname.split("/").pop()),
                 deck_list: JSON.stringify(
                     cardArray.map((element) => {
@@ -75,7 +75,7 @@ function handleSaveDeck(event) {
                         };
                     })
                 ),
-            },
+            }),
         });
     }
 }
