@@ -2,6 +2,7 @@
 const createDeckBtn = document.getElementById('createDeckSave');
 const deleteBtn = document.getElementsByClassName('deleteBtn');
 const editBtn = document.getElementsByClassName('editBtn'); 
+const deckLink = document.getElementsByClassName('deck-link'); 
 
 // function to create deck
 async function createDeckHandler() {
@@ -63,4 +64,8 @@ for (let i = 0; i < deleteBtn.length; i++) {
 
 for (let i = 0; i < editBtn.length; i++) {
   editBtn[i].addEventListener('click', editDeckHandler);
+}
+
+for (let i = 0; i < deckLink.length; i++) {
+  deckLink[i].addEventListener('click', editDeckHandler);
 }
