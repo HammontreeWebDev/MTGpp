@@ -65,25 +65,51 @@ async function init() {
                 // console.log(cardArray[i].name);
                 // console.log(cardArray[i].type);
 
+                let nameResponse = cardArray[i].name;
                 let typeResponse = cardArray[i].type;
+                let listId;
+                // console.log(cardArray[i].name);
 
-                let listId = typeResponse.split(" ")[0];
-
-                console.log(listId);
-                // console.log(typeResponse);
-
-                // If original type pulled from API includes 'creature', set id and title to creature
                 if (typeResponse.includes("Creature")) {
                     listId = "Creature";
                 }
 
-                if (typeResponse.includes("Land")) {
+                else if (typeResponse.includes("Land")) {
                     listId = "Land";
+                }
+
+                else if (typeResponse.includes("Artifact")) {
+                    listId = "Artifact";
+                }
+
+                else if (typeResponse.includes("Enchantment")) {
+                    listId = "Enchantment";
+                }
+
+                else if (typeResponse.includes("Instant")) {
+                    listId = "Instant";
+                }
+
+                else if (typeResponse.includes("Sorcery")) {
+                    listId = "Sorcery";
+                }
+
+                else if (typeResponse.includes("Planeswalker")) {
+                    listId = "planeswalker";
                 }
 
                 if (document.body.textContent.includes(listId)) {
                     $(`#${listId}`).append(`
-            <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span></li>`);
+                    <li><button class="added-card">${nameResponse}</button><span class="card-count">(# in Deck)</span></li>`);
+                }
+
+                // otherwise, create the ID, ul, and first li
+                else {
+                    console.log(listId);
+
+                    cardList.append(`<ul id="${listId}" class="no-list">
+                    <h5 class="card-type">${listId}</h5>
+                    <li><button class="added-card">${nameResponse}</button><span class="card-count">(# in Deck)</span></li></ul>`);
                 }
             }
         })
@@ -158,7 +184,7 @@ cardSubmit.submit(function (event) {
             console.log(cardArray);
 
             function checkType() {
-                
+
                 let typeResponse = response.type_line;
 
                 let listId;
@@ -203,7 +229,7 @@ cardSubmit.submit(function (event) {
                     console.log(listId);
 
                     cardList.append(`<ul id="${listId}" class="no-list">
-                    <h5 class="card-type" value="${response.type_line}">${listId}</h5>
+                    <h5 class="card-type">${listId}</h5>
                     <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span></li></ul>`);
                 }
             }
