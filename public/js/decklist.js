@@ -6,8 +6,8 @@ let cardName = $("#card-name");
 let cardList = $("#card-list");
 let cardType = $(".card-type");
 
-let saveDeckBtn = $("#decklist-save-btn");
-let clearDeckBtn = $("#decklist-delete-btn");
+let saveDeckBtn = $("#save-deck");
+let clearDeckBtn = $("#clear-deck");
 
 // define array that will be used to store card information as well as push to db
 let cardArray = [];
@@ -56,7 +56,6 @@ async function init() {
 }
 
 // save deck details to database
-
 function handleSaveDeck(event) {
     // TODO: Replace with modal
     let save = confirm("Are you sure you want to save your changes?");
@@ -82,8 +81,12 @@ function handleSaveDeck(event) {
 }
 
 // clear deck changes
-function handleClearDeck() {
+function handleClearDeck(event) {
+    // TODO: Replace with modal
+    let clear = confirm("Are you sure you want to clear your changes?");
+    if (clear) {
         location.reload();
+    }
 }
 
 // function / submit handler to show card art/ name/ and add card information to an array for chosen cards
