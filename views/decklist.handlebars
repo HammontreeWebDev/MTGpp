@@ -53,10 +53,10 @@
                 </h5>
                 <!-- Delete and Save buttons -->
                 <div class="btn-group">
-                    <button id="save-deck" class="save-deck deck-list-btns" title="Save My Changes">
+                    <button class="save-deck deck-list-btns" data-bs-toggle="modal" data-bs-target="#decklist-save-modal" title="Save My Changes">
                         <iconify-icon icon="fluent:save-arrow-right-24-filled"></iconify-icon>
                     </button>
-                    <button id="clear-deck" class="clear-deck deck-list-btns" title="Clear My Changes">
+                    <button class="clear-deck deck-list-btns" data-bs-toggle="modal" data-bs-target="#decklist-delete-modal" title="Clear My Changes">
                         <iconify-icon icon="fluent:delete-off-20-regular"></iconify-icon>
                     </button>
                 </div>
@@ -78,7 +78,17 @@
 
 {{!-- Sign out modal --}}
 <div class="modal fade" id="sign-out-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-{{> modal}}
+{{> signoutModal}}
+</div>
+
+{{!-- Deck list save modal --}}
+<div class="modal fade" id="decklist-save-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+{{> decklistSaveModal}}
+</div>
+
+{{!-- Deck list delete modal --}}
+<div class="modal fade" id="decklist-delete-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+{{> decklistDeleteModal}}
 </div>
 
 <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
