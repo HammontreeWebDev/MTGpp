@@ -3,6 +3,7 @@ let cardSearch = $("#card-search");
 let cardSubmit = $("#card-submit");
 let cardArt = $("#card-art-results");
 let cardName = $("#card-name");
+let cardList = $("#card-list");
 
 // define array that will be used to store card information as well as push to db
 let cardArray = [];
@@ -44,7 +45,7 @@ cardSubmit.submit(function(event) {
             cardName.text(response.name);
             return response;
         })
-        // Add selected card information to array of objects
+        // Add selected card information to array of objects and render to page
         .then((response) => {
             console.log(response);
             cardArray.push(
@@ -55,6 +56,14 @@ cardSubmit.submit(function(event) {
                     type: response.type_line,
                 }
             )
+            // let html = `<ul id="card-list" class="no-list">
+            // <h5 id="card-type" class="card-type">Type 1</h5>
+            // <li class="added-card">Card Name <span class="card-count">(# in Deck)</span></li></ul>`
+
+            cardList.append(`<ul class="no-list">
+            <h5 class="card-type">${response.type_line}</h5>
+            <li class="added-card">${response.name}<span class="card-count">(# in Deck)</span></li></ul>`);
+
             console.log(cardArray);
         })
         .catch((error) => {
@@ -62,7 +71,6 @@ cardSubmit.submit(function(event) {
         }) 
 
     });
-
 
 // Event Listeners:
 cardSearch.on("input", handleAutocomplete);
