@@ -44,7 +44,7 @@
         <div class="card deck-list-body">
             <!-- Deck Title -->
             <div class="card-body">
-                <h5 class="card-title text-center list-title">{{deck_name}}
+                <h5 id="deck-title" class="card-title text-center list-title">{{deck_name}}
                     <span>
                         <button class="edit-deck-name deck-list-btns" title="Edit My Deck">
                             <iconify-icon icon="fa-regular:edit"></iconify-icon>
@@ -53,10 +53,10 @@
                 </h5>
                 <!-- Delete and Save buttons -->
                 <div class="btn-group">
-                    <button class="save-deck deck-list-btns" title="Save My Changes">
+                    <button id="save-deck" class="save-deck deck-list-btns" title="Save My Changes">
                         <iconify-icon icon="fluent:save-arrow-right-24-filled"></iconify-icon>
                     </button>
-                    <button class="clear-deck deck-list-btns" title="Clear My Changes">
+                    <button id="clear-deck" class="clear-deck deck-list-btns" title="Clear My Changes">
                         <iconify-icon icon="fluent:delete-off-20-regular"></iconify-icon>
                     </button>
                 </div>

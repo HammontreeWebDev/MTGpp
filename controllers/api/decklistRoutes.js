@@ -17,11 +17,16 @@ router.get("/:id", async (req, res) => {
     }
 });
 
-// Change the name of an existing deck
+// Make changes to an existing deck
 router.put("/", withAuth, async (req, res) => {
     try {
         const deck = await Deck.findByPk(req.body.deck_id);
-        deck.deck_name = req.body.deck_name;
+        if (req.body.deck_name) {
+            deck.deck_name = req.body.deck_name;
+        }
+        if (req.body.deck_list) {
+            deck.deck_list = req.body.deck_list;
+        }
         await deck.save();
     } catch (err) {
         console.error(err);
