@@ -12,7 +12,7 @@
         <div class="navbar-nav">
           {{#if logged_in}}
           <a class="nav-link" href="/decks">My Decks</a>
-          <button id="sign-out" class="nav-link decks-btns" data-bs-toggle="modal" data-bs-target="#sign-out-modal">Sign Out</button>
+          <button id="sign-out" class="nav-link decks-btns" data-bs-toggle="modal" data-bs-target="#sign-out-modal" href="/modals">Sign Out</button>
           {{else}}
           <a class="nav-link" href="/login">Sign In</a>
           <a class="nav-link" href="/register">Register</a>
@@ -71,7 +71,7 @@
 
 {{!-- Sign out modal --}}
 <div class="modal fade" id="sign-out-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-{{> signoutModal}}
+{{> modal}}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
