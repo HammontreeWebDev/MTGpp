@@ -12,7 +12,7 @@
         <div class="navbar-nav">
           {{#if logged_in}}
           <a class="nav-link" href="/decks">My Decks</a>
-          <button id="sign-out" class="nav-link decks-btns" data-bs-toggle="modal" data-bs-target="#sign-out-modal">Sign Out</button>
+          <button id="sign-out" class="nav-link decks-btns" data-bs-toggle="modal" data-bs-target="#sign-out-modal" href="/modals">Sign Out</button>
           {{else}}
           <a class="nav-link" href="/login">Sign In</a>
           <a class="nav-link" href="/register">Register</a>
@@ -74,15 +74,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Signed Out</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <p>You have been successfully signed out!</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <button id="signoutOkay" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Okay</button>
       </div>
     </div>
   </div>

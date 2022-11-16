@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a href="/decks" id="my-decks" class="nav-link px-5">My Decks</a>
-                <a href="#" id="sign-out" class="nav-link">Sign Out</a>
+                <a href="#" id="sign-out" class="nav-link" data-bs-toggle="modal" data-bs-target="#sign-out-modal">Sign Out</a>
             </div>
         </div>
     </div>
@@ -75,8 +75,26 @@
         </div>
     </section>
 </main>
+{{!-- Sign out modal --}}
+<div class="modal fade" id="sign-out-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Signed Out</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>You have been successfully signed out!</p>
+      </div>
+      <div class="modal-footer">
+        <button id="signoutOkay" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script src="../js/decklist.js"></script>
+<script src="../js/logout.js"></script>
