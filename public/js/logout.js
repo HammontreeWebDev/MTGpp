@@ -9,4 +9,4 @@ const signOutHandler = async () => {
   } 
 };
 
-document.querySelector('#sign-out').addEventListener('click', signOutHandler);
+document.querySelector('#signoutOkay').addEventListener('click', signOutHandler);
