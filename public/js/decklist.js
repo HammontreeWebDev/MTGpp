@@ -66,6 +66,7 @@ function handleSaveDeck(event) {
                 "Content-Type": "application/json",
             },
             body: {
+                deck_id: parseInt(location.pathname.split("/").pop()),
                 deck_list: JSON.stringify(
                     cardArray.map((element) => {
                         return {
@@ -125,17 +126,17 @@ cardSubmit.submit(function (event) {
                 // remove hyphen then white space from response type to pass as created elements ID for card types
                 let typeResponse = response.type_line;
 
-                let listId = typeResponse.split(' ')[0];
+                let listId = typeResponse.split(" ")[0];
                 // let listId = first.toLowerCase();
 
                 // If original type pulled from API includes 'creature', set id and title to creature
-                if (typeResponse.includes('Creature')) {
-                     listId = 'Creature'
+                if (typeResponse.includes("Creature")) {
+                    listId = "Creature";
                 }
 
-                if (typeResponse.includes('Land')) {
-                    listId = 'Land'
-               }
+                if (typeResponse.includes("Land")) {
+                    listId = "Land";
+                }
 
                 // If the type of card exists, append the card name only to existing ID for that card type
                 if (document.body.textContent.includes(listId)) {
