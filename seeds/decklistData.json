@@ -1,27 +1,27 @@
 [
     {
         "deck_name": "Deck 1",
-        "deck_list": "[{id: \"ab3cec7e-513e-400d-a1a8-2c71cdde02c6\", amount: 4}, {id: \"f70ea481-1751-4097-af41-2d13fe79e788\", amount: 4}, {id: \"724acbe2-4c82-4360-a738-38cc6aa0c4a4\", amount: 4}, {id: \"22de1edc-ec67-4694-ab88-2a679c8a450f\", amount: 16}]",
+        "deck_list": "[{\"id\": \"ab3cec7e-513e-400d-a1a8-2c71cdde02c6\", \"amount\": 4}, {\"id\": \"f70ea481-1751-4097-af41-2d13fe79e788\", \"amount\": 4}, {\"id\": \"724acbe2-4c82-4360-a738-38cc6aa0c4a4\", \"amount\": 4}, {\"id\": \"22de1edc-ec67-4694-ab88-2a679c8a450f\", \"amount\": 16}]",
         "user_id": 1
     },
     {
         "deck_name": "Deck 2",
-        "deck_list": "[{id: \"ab3cec7e-513e-400d-a1a8-2c71cdde02c6\", amount: 4}, {id: \"f70ea481-1751-4097-af41-2d13fe79e788\", amount: 4}, {id: \"724acbe2-4c82-4360-a738-38cc6aa0c4a4\", amount: 4}, {id: \"22de1edc-ec67-4694-ab88-2a679c8a450f\", amount: 16}]",
+        "deck_list": "[{\"id\": \"ab3cec7e-513e-400d-a1a8-2c71cdde02c6\", \"amount\": 4}, {\"id\": \"f70ea481-1751-4097-af41-2d13fe79e788\", \"amount\": 4}, {\"id\": \"724acbe2-4c82-4360-a738-38cc6aa0c4a4\", \"amount\": 4}, {\"id\": \"22de1edc-ec67-4694-ab88-2a679c8a450f\", \"amount\": 16}]",
         "user_id": 2
     },
     {
         "deck_name": "Deck 3",
-        "deck_list": "[{id: \"ab3cec7e-513e-400d-a1a8-2c71cdde02c6\", amount: 4}, {id: \"f70ea481-1751-4097-af41-2d13fe79e788\", amount: 4}, {id: \"724acbe2-4c82-4360-a738-38cc6aa0c4a4\", amount: 4}, {id: \"22de1edc-ec67-4694-ab88-2a679c8a450f\", amount: 16}]",
+        "deck_list": "[{\"id\": \"ab3cec7e-513e-400d-a1a8-2c71cdde02c6\", \"amount\": 4}, {\"id\": \"f70ea481-1751-4097-af41-2d13fe79e788\", \"amount\": 4}, {\"id\": \"724acbe2-4c82-4360-a738-38cc6aa0c4a4\", \"amount\": 4}, {\"id\": \"22de1edc-ec67-4694-ab88-2a679c8a450f\", \"amount\": 16}]",
         "user_id": 3
     },
     {
         "deck_name": "Deck 4",
-        "deck_list": "[{id: \"ab3cec7e-513e-400d-a1a8-2c71cdde02c6\", amount: 4}, {id: \"f70ea481-1751-4097-af41-2d13fe79e788\", amount: 4}, {id: \"724acbe2-4c82-4360-a738-38cc6aa0c4a4\", amount: 4}, {id: \"22de1edc-ec67-4694-ab88-2a679c8a450f\", amount: 16}]",
+        "deck_list": "[{\"id\": \"ab3cec7e-513e-400d-a1a8-2c71cdde02c6\", \"amount\": 4}, {\"id\": \"f70ea481-1751-4097-af41-2d13fe79e788\", \"amount\": 4}, {\"id\": \"724acbe2-4c82-4360-a738-38cc6aa0c4a4\", \"amount\": 4}, {\"id\": \"22de1edc-ec67-4694-ab88-2a679c8a450f\", \"amount\": 16}]",
         "user_id": 4
     },
     {
         "deck_name": "Deck 5",
-        "deck_list": "[{id: \"ab3cec7e-513e-400d-a1a8-2c71cdde02c6\", amount: 4}, {id: \"f70ea481-1751-4097-af41-2d13fe79e788\", amount: 4}, {id: \"724acbe2-4c82-4360-a738-38cc6aa0c4a4\", amount: 4}, {id: \"22de1edc-ec67-4694-ab88-2a679c8a450f\", amount: 16}]",
+        "deck_list": "[{\"id\": \"ab3cec7e-513e-400d-a1a8-2c71cdde02c6\", \"amount\": 4}, {\"id\": \"f70ea481-1751-4097-af41-2d13fe79e788\", \"amount\": 4}, {\"id\": \"724acbe2-4c82-4360-a738-38cc6aa0c4a4\", \"amount\": 4}, {\"id\": \"22de1edc-ec67-4694-ab88-2a679c8a450f\", \"amount\": 16}]",
         "user_id": 5
     }
 ]
