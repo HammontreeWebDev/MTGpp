@@ -162,7 +162,7 @@ function handleRenameDeck() {
         }),
     })
     // document.location.replace(`/decklist/${location.pathname.split("/").pop()}`);
-    setTimeout(location.reload.bind(location), 600);    
+    setTimeout(location.reload.bind(location), 600);
 }
 
 // function to check if ul is empty and delete it if it is. called in document.on event listener for delete buttons
@@ -181,8 +181,7 @@ function handleTypeHeaderDelete() {
     }
 }
 
-
-// function / submit handler to show card art/ name/ and add card information to an array for chosen cards
+// render card art / add to array / render cards to page
 cardSubmit.submit(function (event) {
     event.preventDefault();
     fetch(`../api/scry/name/${$("input").first().val()}`)
@@ -209,15 +208,26 @@ cardSubmit.submit(function (event) {
                 id: response.id,
                 art: response.image_uris.border_crop,
                 type: response.type_line,
+                amount: '',
             });
+
+            // set up array to count the number of duplicates
+            let cardCount = [];
+            const count = {};
+            let nameArray = [];
+            let countArray = [];
+
             // append selected cards to the page
             checkType();
 
             // console.log(cardArray);
 
             function checkType() {
-
+                renderAmount();
                 let typeResponse = response.type_line;
+                let nameResponse = response.name;
+                // initialize card count to 1
+                let countResponse = 1;
 
                 let listId;
 
@@ -251,9 +261,18 @@ cardSubmit.submit(function (event) {
                 }
 
                 // If the type of card exists, append the card name only to existing ID for that card type
-                if (document.body.textContent.includes(listId)) {
+                // check response name against name Array and update to name and amount, else it defaults to response.name and amount 1
+                if (document.body.textContent.includes(listId) && nameArray.includes(nameResponse)) {
+
+                    let index = nameArray.indexOf(nameResponse);
+                    nameResponse = nameArray[index];
+                    countResponse = countArray[index];
+
+                    console.log(nameResponse);
+                    console.log(countResponse);
+
                     $(`#${listId}`).append(`
-                    <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span><iconify-icon icon="typcn:delete" data-card="${response.name}" class ="delete-card"></iconify-icon></li>`);
+                    <li><button class="added-card">${nameResponse}</button><span class="card-count">(x${countResponse})</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li>`);
                 }
 
                 // otherwise, create the ID, ul, and first li
@@ -262,8 +281,27 @@ cardSubmit.submit(function (event) {
 
                     cardList.append(`<ul id="${listId}" class="no-list">
                     <h5 class="card-type">${listId}</h5>
-                    <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span><iconify-icon icon="typcn:delete" data-card="${response.name}" class ="delete-card"></iconify-icon></li></ul>`);
+                    <li><button class="added-card">${nameResponse}</button><span class="card-count">(x${countResponse})</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li></ul>`);
                 }
+            };
+
+            // function to render amount of cards to page and update cardArray
+            // called in check type function
+            // console.log(cardArray);
+            function renderAmount() {
+                for (let i = 0; i < cardArray.length; i++) {
+                    // console.log(cardArray[i].name);
+                    cardCount.push(cardArray[i].name)
+                }
+                // console.log(cardCount);
+                cardCount.forEach(card => {
+                    count[card] = (count[card] || 0) + 1;
+                })
+
+                nameArray = Object.keys(count)
+                countArray = Object.values(count)
+                console.log(countArray);
+                console.log(nameArray);
             }
         })
         .catch((error) => {
