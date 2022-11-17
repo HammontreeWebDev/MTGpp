@@ -164,10 +164,20 @@ function handleRenameDeck(event) {
     });
 }
 
-// remove a card from the cardArray
-function handleRemoveCard() {
-    console.log(cardArray);
-    console.log('button clicked');
+// function to check if ul is empty and delete it if it is. called in document.on event listener for delete buttons
+
+function handleTypeHeaderDelete() {
+
+    let listBody = $('ul.no-list');
+
+    for (let i = 0; i < listBody.length; i++) {
+        let children = listBody[i].children;
+
+        if (!children[1]) {
+            children[0].parentElement.remove();
+            console.log('Removed Unordered List');
+        }
+    }
 }
 
 
@@ -286,6 +296,8 @@ $(document).on({
         if (index > -1) {
             cardArray.splice(index, 1);
             this.parentElement.remove();
+            // check if ul is empty and if so, delete type header from page as well
+            handleTypeHeaderDelete();
         }
     }
 }, ".delete-card")
