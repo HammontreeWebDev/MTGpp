@@ -23,16 +23,8 @@
   </nav>
   <br>
   <div class="container-fluid">
-    <div class="row align-items-center">
-      <div class="col-md-1 col-lg-2">
-        <div class="symbolDiv"><img class="symbol" src="/assets/images/tap-this-permanent.jpg" alt="tap-this-permanent-symbol"></div>
-        <br>
-        <div class="symbolDiv"><img class="symbol" src="/assets/images/chaos.jpg" alt="chaos-symbol"></div>
-        <br>
-        <div class="symbolDiv"><img class="symbol" src="/assets/images/one-snow-mana.jpg" alt="one-snow-mana-symbol"></div>
-      </div>
-
-      <div id="myCarousel" class="carousel slide col-md-10 col-lg-8" data-bs-ride="carousel">
+    <div class="row gy-5 align-items-center">
+      <div id="myCarousel" class="carousel slide col-sm-10 col-md-8 order-sm-2" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="{{this.[0].image_uris.art_crop}}" class="d-block w-100" alt="{{this.[0].name}}">
@@ -60,7 +52,15 @@
         </button>
       </div>
 
-      <div class="col-md-1 col-lg-2">
+      <div class="col col-sm-1 col-md-2 order-sm-1">
+        <div class="symbolDiv"><img class="symbol" src="/assets/images/tap-this-permanent.jpg" alt="tap-this-permanent-symbol"></div>
+        <br>
+        <div class="symbolDiv"><img class="symbol" src="/assets/images/chaos.jpg" alt="chaos-symbol"></div>
+        <br>
+        <div class="symbolDiv"><img class="symbol" src="/assets/images/one-snow-mana.jpg" alt="one-snow-mana-symbol"></div>
+      </div>
+
+      <div class="col col-sm-1 col-md-2 order-sm-3">
         <div class="symbolDiv"><img class="symbol" src="/assets/images/one-white-or-blue-mana.jpg" alt="one-white-or-blue-mana-symbol"></div>
         <br>
         <div class="symbolDiv"><img class="symbol" src="/assets/images/planeswalker.jpg" alt="planeswalker-symbol"></div>

@@ -96,6 +96,7 @@ form {
 
 nav {
     background-color: var(--mp5);
+    margin-bottom: 50px;
 }
 
 .loginPortal {
