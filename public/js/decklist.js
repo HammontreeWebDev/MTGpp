@@ -242,7 +242,7 @@ cardSubmit.submit(function (event) {
                 // If the type of card exists, append the card name only to existing ID for that card type
                 if (document.body.textContent.includes(listId)) {
                     $(`#${listId}`).append(`
-                    <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span></li>`);
+                    <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span><iconify-icon icon="typcn:delete" data-card="${response.name}" class ="delete-card"></iconify-icon></li>`);
                 }
 
                 // otherwise, create the ID, ul, and first li
@@ -251,7 +251,7 @@ cardSubmit.submit(function (event) {
 
                     cardList.append(`<ul id="${listId}" class="no-list">
                     <h5 class="card-type">${listId}</h5>
-                    <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span></li></ul>`);
+                    <li><button class="added-card">${response.name}</button><span class="card-count">(# in Deck)</span><iconify-icon icon="typcn:delete" data-card="${response.name}" class ="delete-card"></iconify-icon></li></ul>`);
                 }
             }
         })
