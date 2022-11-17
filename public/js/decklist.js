@@ -8,7 +8,7 @@ let cardType = $(".card-type");
 
 
 let saveDeckBtn = $("#decklist-save-btn");
-let clearDeckBtn = $("#decklist-delete-btn");
+let clearDeckBtn = $("#deck-clear-btn");
 let renameDeckBtn = $("#deck-rename-btn");
 let deleteCard = $(".delete-card");
 
@@ -149,8 +149,7 @@ function handleClearDeck() {
 
 
 // rename the deck
-function handleRenameDeck(event) {
-    event.preventDefault();
+function handleRenameDeck() {
     let newName = $('#editDeckName').val();
     fetch(`../api/decklist`, {
         method: "PUT",
@@ -162,7 +161,8 @@ function handleRenameDeck(event) {
             deck_name: newName,
         }),
     })
-    location.reload();
+    // document.location.replace(`/decklist/${location.pathname.split("/").pop()}`);
+    setTimeout(location.reload.bind(location), 600);    
 }
 
 // function to check if ul is empty and delete it if it is. called in document.on event listener for delete buttons

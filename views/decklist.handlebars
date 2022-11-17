@@ -57,7 +57,7 @@
                     <button class="save-deck deck-list-btns" data-bs-toggle="modal" data-bs-target="#decklist-save-modal" title="Save My Changes">
                         <iconify-icon icon="fluent:save-arrow-right-24-filled"></iconify-icon>
                     </button>
-                    <button class="clear-deck deck-list-btns" data-bs-toggle="modal" data-bs-target="#decklist-delete-modal" title="Clear My Changes">
+                    <button class="clear-deck deck-list-btns" data-bs-toggle="modal" data-bs-target="#decklist-clear-modal" title="Clear My Changes">
                         <iconify-icon icon="fluent:delete-off-20-regular"></iconify-icon>
                     </button>
                 </div>
@@ -87,9 +87,9 @@
 {{> decklistSaveModal}}
 </div>
 
-{{!-- Deck list delete modal --}}
-<div class="modal fade" id="decklist-delete-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-{{> decklistDeleteModal}}
+{{!-- Deck list clear changes modal --}}
+<div class="modal fade" id="decklist-clear-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+{{> deckClearModal}}
 </div>
 
 {{!-- Deck rename modal --}}
