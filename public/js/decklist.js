@@ -262,31 +262,48 @@ cardSubmit.submit(function (event) {
 
                 // If the type of card exists, append the card name only to existing ID for that card type
                 // check response name against name Array and update to name and amount, else it defaults to response.name and amount 1
-                if (document.body.innerHTML.includes(`$(#${nameResponse})`)) {
-                    console.log('yes');
-                }
-                
-                if (document.body.textContent.includes(listId) && nameArray.includes(nameResponse)) {
+
+                if(document.body.textContent.includes(listId) && nameResponse) {
 
                     let index = nameArray.indexOf(nameResponse);
                     nameResponse = nameArray[index];
                     countResponse = countArray[index];
 
+                    let countID = $.trim(nameResponse.replace(/\s+/g,''));
+                    console.log(countID);
+
+                    $(`#${countID}`)[0].innerHTML = `(x${countResponse})`;
+
+
+                }
+               
+                else if (document.body.textContent.includes(listId)) {
+
+                    let index = nameArray.indexOf(nameResponse);
+                    nameResponse = nameArray[index];
+                    countResponse = countArray[index];
+
+                    let countID = $.trim(nameResponse.replace(/\s+/g,''));
+
                     // console.log(nameResponse);
                     // console.log(countResponse);
 
                     $(`#${listId}`).append(`
-                    <li><button class="added-card">${nameResponse}</button><span id="${nameResponse}" class="card-count">(x${countResponse})</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li>`);
+                    <li><button class="added-card">${nameResponse}</button><span id="${countID}" class="card-count">(x${countResponse})</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li>`);
                 }
 
                 // otherwise, create the ID, ul, and first li
                 else {
                     // console.log(listId);
 
+                    let countID = $.trim(nameResponse.replace(/\s+/g,''));
+
                     cardList.append(`<ul id="${listId}" class="no-list">
                     <h5 class="card-type">${listId}</h5>
-                    <li><button class="added-card">${nameResponse}</button><span id="${nameResponse}" class="card-count">(x${countResponse})</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li></ul>`);
+                    <li><button class="added-card">${nameResponse}</button><span id="${countID}" class="card-count">(x${countResponse})</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li></ul>`);
                 }
+
+
             };
 
             // function to render amount of cards to page and update cardArray
