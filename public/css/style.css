@@ -104,8 +104,8 @@ nav {
     background-size: 100% 100%;
     border: #04BF9D solid 2px;
     border-radius: 5px;
-    width: 20%;
-    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
 }
 
 .loginPortal button {
