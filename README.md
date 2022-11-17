@@ -24,6 +24,9 @@
   ## Usage:
   Users can create an account by clicking on the "Register" link on the homepage. Once logged in, users are redirected to a page that displays their saved decks in the order they were created. On this page, users have the option to edit, delete, or create a new deck. The edit option redirects to a page that displays the cards (if any) within the selected deck. This page features a search field with auto-complete and card preview that allows users to add new cards. Options to remove cards from the deck and rename the deck are also available.
 
+  
+  Visit:  [https://peaceful-escarpment-11973.herokuapp.com/](https://peaceful-escarpment-11973.herokuapp.com/)  to start building your decks!
+
   &nbsp;
   &nbsp;
 
