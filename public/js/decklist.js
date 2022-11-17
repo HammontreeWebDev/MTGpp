@@ -226,6 +226,7 @@ cardSubmit.submit(function (event) {
                 renderAmount();
                 let typeResponse = response.type_line;
                 let nameResponse = response.name;
+                let countID = $.trim(nameResponse.replace(/\s+/g,''));
                 // initialize card count to 1
                 let countResponse = 1;
 
@@ -263,13 +264,11 @@ cardSubmit.submit(function (event) {
                 // If the type of card exists, append the card name only to existing ID for that card type
                 // check response name against name Array and update to name and amount, else it defaults to response.name and amount 1
 
-                if(document.body.textContent.includes(listId) && nameResponse) {
+                if(document.body.textContent.includes(listId) && document.body.innerHTML.includes(countID)) {
 
                     let index = nameArray.indexOf(nameResponse);
                     nameResponse = nameArray[index];
                     countResponse = countArray[index];
-
-                    let countID = $.trim(nameResponse.replace(/\s+/g,''));
                     console.log(countID);
 
                     $(`#${countID}`)[0].innerHTML = `(x${countResponse})`;
@@ -283,8 +282,6 @@ cardSubmit.submit(function (event) {
                     nameResponse = nameArray[index];
                     countResponse = countArray[index];
 
-                    let countID = $.trim(nameResponse.replace(/\s+/g,''));
-
                     // console.log(nameResponse);
                     // console.log(countResponse);
 
@@ -295,8 +292,6 @@ cardSubmit.submit(function (event) {
                 // otherwise, create the ID, ul, and first li
                 else {
                     // console.log(listId);
-
-                    let countID = $.trim(nameResponse.replace(/\s+/g,''));
 
                     cardList.append(`<ul id="${listId}" class="no-list">
                     <h5 class="card-type">${listId}</h5>
