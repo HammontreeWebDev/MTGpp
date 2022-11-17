@@ -47,7 +47,7 @@
             <div class="card-body">
                 <h5 id="deck-title" class="card-title text-center list-title">{{deck_name}}
                     <span>
-                        <button id="edit-deck-name" class="edit-deck-name deck-list-btns" title="Edit My Deck">
+                        <button class="edit-deck-name deck-list-btns" data-bs-toggle="modal" data-bs-target="#deck-rename-modal" title="Edit My Deck">
                             <iconify-icon icon="fa-regular:edit"></iconify-icon>
                         </button>
                     </span>
@@ -90,6 +90,11 @@
 {{!-- Deck list delete modal --}}
 <div class="modal fade" id="decklist-delete-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 {{> decklistDeleteModal}}
+</div>
+
+{{!-- Deck rename modal --}}
+<div class="modal fade" id="deck-rename-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+{{> deckRenameModal}}
 </div>
 
 <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
