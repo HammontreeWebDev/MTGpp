@@ -96,6 +96,7 @@ form {
 
 nav {
     background-color: var(--mp5);
+    margin-bottom: 50px;
 }
 
 .loginPortal {
@@ -133,12 +134,12 @@ nav {
 
 #myCarousel {
     margin: 1% auto;
-    width: 50%;
+    width: 100;
 }
 
 .carousel-inner {
     margin: auto;
-    width: 80%;
+    max-width: 65%;
     border: #5A278C solid 3px;
     border-radius: 5px;
     box-shadow:
@@ -157,7 +158,13 @@ nav {
         0 0 16px #5A278C,
         0 0 17px #AE4AD9,
         0 0 18px #E68DF2;
-    width: 60%;
+    width: 75%;
+    max-width: 65%;
+}
+
+.symbolDiv {
+    display: flex;
+    justify-content: center;
 }
 
 .col-center {
@@ -183,6 +190,18 @@ nav {
         0 0 10px #04BFAD,
         0 0 21px #fff,
         0 0 42px #0fa;
+}
+
+.wrapped {
+	/* wrap long urls */
+	white-space: pre;           /* CSS 2.0 */
+	white-space: pre-wrap;      /* CSS 2.1 */
+	white-space: pre-line;      /* CSS 3.0 */
+	white-space: -pre-wrap;     /* Opera 4-6 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -hp-pre-wrap;  /* HP Printers */
+	word-wrap: break-word;      /* IE 5+ */
 }
 
 /* MODAL styling */
