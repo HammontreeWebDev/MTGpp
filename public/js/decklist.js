@@ -69,9 +69,23 @@ async function init() {
                 // console.log(cardArray[i].name);
                 // console.log(cardArray[i].type);
 
+                // set up array to count the number of duplicates
+                let cardCount = [];
+                const count = {};
+                let nameArray = [];
+                let countArray = [];
+                renderAmount();
+
+
                 let nameResponse = cardArray[i].name;
                 let typeResponse = cardArray[i].type;
                 let listId;
+                let countID = $.trim(nameResponse.replace(/\s+/g, ''));
+                countID = $.trim(countID.replace('//', ''));
+                countID = $.trim(countID.replace(',', ''));
+
+                // initialize card count to 1
+                let countResponse = 1;
                 // console.log(cardArray[i].name);
 
                 if (typeResponse.includes("Creature")) {
@@ -102,9 +116,20 @@ async function init() {
                     listId = "planeswalker";
                 }
 
-                if (document.body.textContent.includes(listId)) {
+                if (document.body.textContent.includes(listId) && document.body.innerHTML.includes(countID)) {
+
+                    let index = nameArray.indexOf(nameResponse);
+                    nameResponse = nameArray[index];
+                    countResponse = countArray[index];
+                    console.log(countID);
+
+                    $(`#${countID}`)[0].innerHTML = `(x${countResponse})`;
+
+                }
+
+                else if (document.body.textContent.includes(listId)) {
                     $(`#${listId}`).append(`
-                    <li><button class="added-card">${nameResponse}</button><span class="card-count">(# in Deck)</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li>`);
+                    <li><button class="added-card">${nameResponse}</button><span id="${countID}" class="card-count">(x${countResponse})</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li>`);
                 }
 
                 // otherwise, create the ID, ul, and first li
@@ -113,11 +138,25 @@ async function init() {
 
                     cardList.append(`<ul id="${listId}" class="no-list">
                     <h5 class="card-type">${listId}</h5>
-                    <li><button class="added-card">${nameResponse}</button><span class="card-count">(# in Deck)</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li></ul>`);
+                    <li><button class="added-card">${nameResponse}</button><span id="${countID}" class="card-count">(x${countResponse})</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li></ul>`);
+                }
+                function renderAmount() {
+                    for (let i = 0; i < cardArray.length; i++) {
+                        // console.log(cardArray[i].name);
+                        cardCount.push(cardArray[i].name)
+                    }
+                    // console.log(cardCount);
+                    cardCount.forEach(card => {
+                        count[card] = (count[card] || 0) + 1;
+                    })
+        
+                    nameArray = Object.keys(count)
+                    countArray = Object.values(count)
+                    console.log(countArray);
+                    console.log(nameArray);
                 }
             }
         })
-
 }
 
 // save deck details to database
@@ -226,9 +265,9 @@ cardSubmit.submit(function (event) {
                 renderAmount();
                 let typeResponse = response.type_line;
                 let nameResponse = response.name;
-                let countID = $.trim(nameResponse.replace(/\s+/g,''));
-                countID = $.trim(countID.replace('//',''));
-                countID = $.trim(countID.replace(',',''));
+                let countID = $.trim(nameResponse.replace(/\s+/g, ''));
+                countID = $.trim(countID.replace('//', ''));
+                countID = $.trim(countID.replace(',', ''));
 
                 // initialize card count to 1
                 let countResponse = 1;
@@ -267,7 +306,7 @@ cardSubmit.submit(function (event) {
                 // If the type of card exists, append the card name only to existing ID for that card type
                 // check response name against name Array and update to name and amount, else it defaults to response.name and amount 1
 
-                if(document.body.textContent.includes(listId) && document.body.innerHTML.includes(countID)) {
+                if (document.body.textContent.includes(listId) && document.body.innerHTML.includes(countID)) {
 
                     let index = nameArray.indexOf(nameResponse);
                     nameResponse = nameArray[index];
@@ -278,7 +317,7 @@ cardSubmit.submit(function (event) {
 
 
                 }
-               
+
                 else if (document.body.textContent.includes(listId)) {
 
                     let index = nameArray.indexOf(nameResponse);
