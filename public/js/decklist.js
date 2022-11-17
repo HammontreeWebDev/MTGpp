@@ -10,6 +10,7 @@ let cardType = $(".card-type");
 let saveDeckBtn = $("#decklist-save-btn");
 let clearDeckBtn = $("#decklist-delete-btn");
 let renameDeckBtn = $("#edit-deck-name");
+let deleteCard = $(".delete-card");
 
 
 // define array that will be used to store card information as well as push to db
@@ -61,7 +62,7 @@ async function init() {
         // TODO: Render cards to page
         .then((cardArray) => {
 
-            console.log(cardArray);
+            // console.log(cardArray);
 
             for (i = 0; i < cardArray.length; i++) {
 
@@ -103,16 +104,16 @@ async function init() {
 
                 if (document.body.textContent.includes(listId)) {
                     $(`#${listId}`).append(`
-                    <li><button class="added-card">${nameResponse}</button><span class="card-count">(# in Deck)</span></li>`);
+                    <li><button class="added-card">${nameResponse}</button><span class="card-count">(# in Deck)</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li>`);
                 }
 
                 // otherwise, create the ID, ul, and first li
                 else {
-                    console.log(listId);
+                    // console.log(listId);
 
                     cardList.append(`<ul id="${listId}" class="no-list">
                     <h5 class="card-type">${listId}</h5>
-                    <li><button class="added-card">${nameResponse}</button><span class="card-count">(# in Deck)</span></li></ul>`);
+                    <li><button class="added-card">${nameResponse}</button><span class="card-count">(# in Deck)</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li></ul>`);
                 }
             }
         })
@@ -163,6 +164,12 @@ function handleRenameDeck(event) {
     });
 }
 
+// remove a card from the cardArray
+function handleRemoveCard() {
+    console.log(cardArray);
+    console.log('button clicked');
+}
+
 
 // function / submit handler to show card art/ name/ and add card information to an array for chosen cards
 cardSubmit.submit(function (event) {
@@ -195,7 +202,7 @@ cardSubmit.submit(function (event) {
             // append selected cards to the page
             checkType();
 
-            console.log(cardArray);
+            // console.log(cardArray);
 
             function checkType() {
 
@@ -240,7 +247,7 @@ cardSubmit.submit(function (event) {
 
                 // otherwise, create the ID, ul, and first li
                 else {
-                    console.log(listId);
+                    // console.log(listId);
 
                     cardList.append(`<ul id="${listId}" class="no-list">
                     <h5 class="card-type">${listId}</h5>
@@ -260,6 +267,30 @@ saveDeckBtn.on("click", handleSaveDeck);
 clearDeckBtn.on("click", handleClearDeck);
 renameDeckBtn.on("click", handleRenameDeck);
 
+// delete card from page
+$(document).on({
+    click: function (event) {
+        event.preventDefault();
+
+        let namesArray = [];
+        for (let i = 0; i < cardArray.length; i++) {
+            let names = cardArray[i].name
+            namesArray.push(names);
+        }
+        // Get index of the name that matches in the name array
+        let namesIndex = namesArray.indexOf(event.target.dataset.card);
+        let index = namesIndex;
+
+        // based on the index number found above, use that to delete all card information for that index number (the numbers will match)
+
+        if (index > -1) {
+            cardArray.splice(index, 1);
+            this.parentElement.remove();
+        }
+    }
+}, ".delete-card")
+
+// mouseover event to show card art
 $(document).on(
     {
         mouseenter: function () {

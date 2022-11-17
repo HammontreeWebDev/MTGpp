@@ -489,3 +489,17 @@ nav {
     font-family: 'Cinzel', serif;
     color: var(--am4);
 }
+/* delete icon for spec card on decklist */
+.delete-card {
+    color: var(--mp1);
+}
+.delete-card:hover {
+    color: white;
+    cursor: pointer;
+}
+.search-subtitle {
+    font-family: 'Merienda', serif;
+    color: var(--am4);
+    font-style: italic;
+    font-size: 80%;
+}
