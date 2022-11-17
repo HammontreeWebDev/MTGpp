@@ -133,12 +133,12 @@ nav {
 
 #myCarousel {
     margin: 1% auto;
-    width: 50%;
+    width: 100;
 }
 
 .carousel-inner {
     margin: auto;
-    width: 80%;
+    max-width: 65%;
     border: #5A278C solid 3px;
     border-radius: 5px;
     box-shadow:
@@ -157,7 +157,13 @@ nav {
         0 0 16px #5A278C,
         0 0 17px #AE4AD9,
         0 0 18px #E68DF2;
-    width: 60%;
+    width: 75%;
+    max-width: 65%;
+}
+
+.symbolDiv {
+    display: flex;
+    justify-content: center;
 }
 
 .col-center {

@@ -21,17 +21,18 @@
       </div>
     </div>
   </nav>
-    <br>
-    <div class="container-fluid">
-      <div class="row align-items-center">
-        <div class="col-md-auto col-center">
-          <div><img class="symbol" src="/assets/images/tap-this-permanent.jpg" alt="tap-this-permanent-symbol"></div>
-          <br>
-          <div><img class="symbol" src="/assets/images/chaos.jpg" alt="chaos-symbol"></div>
-          <br>
-          <div><img class="symbol" src="/assets/images/one-snow-mana.jpg" alt="one-snow-mana-symbol"></div>
-        </div> 
-    <div id="myCarousel" class="carousel slide col-md-auto" data-bs-ride="carousel">
+  <br>
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-md-1 col-lg-2">
+        <div class="symbolDiv"><img class="symbol" src="/assets/images/tap-this-permanent.jpg" alt="tap-this-permanent-symbol"></div>
+        <br>
+        <div class="symbolDiv"><img class="symbol" src="/assets/images/chaos.jpg" alt="chaos-symbol"></div>
+        <br>
+        <div class="symbolDiv"><img class="symbol" src="/assets/images/one-snow-mana.jpg" alt="one-snow-mana-symbol"></div>
+      </div>
+
+      <div id="myCarousel" class="carousel slide col-md-10 col-lg-8" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="{{this.[0].image_uris.art_crop}}" class="d-block w-100" alt="{{this.[0].name}}">
@@ -57,17 +58,18 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-        </div>
-      <div class="col-md-auto col-center">
-        <div><img class="symbol" src="/assets/images/one-white-or-blue-mana.jpg" alt="one-white-or-blue-mana-symbol"></div>
+      </div>
+
+      <div class="col-md-1 col-lg-2">
+        <div class="symbolDiv"><img class="symbol" src="/assets/images/one-white-or-blue-mana.jpg" alt="one-white-or-blue-mana-symbol"></div>
         <br>
-        <div><img class="symbol" src="/assets/images/planeswalker.jpg" alt="planeswalker-symbol"></div>
+        <div class="symbolDiv"><img class="symbol" src="/assets/images/planeswalker.jpg" alt="planeswalker-symbol"></div>
         <br>
-        <div><img class="symbol" src="/assets/images/untap-this-permanent.jpg" alt="untap-this-permanent-symbol"></div>
+        <div class="symbolDiv"><img class="symbol" src="/assets/images/untap-this-permanent.jpg" alt="untap-this-permanent-symbol"></div>
       </div>
     </div>
   </div>
-    </div>
+
 
 {{!-- Sign out modal --}}
 <div class="modal fade" id="sign-out-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
