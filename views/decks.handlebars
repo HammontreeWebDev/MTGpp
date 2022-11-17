@@ -34,7 +34,9 @@
                                 <button class="editBtn" data-edit-deck-id = "{{id}}">
                                     <iconify-icon icon="fa-regular:edit"></iconify-icon>
                                 </button>
-                                <button class="deleteBtn" data-deck-id ="{{id}}">
+                                <button class="deleteBtn" data-deck-id ="{{id}}" 
+                                {{!-- data-bs-toggle="modal" data-bs-target="#delete-deck-modal" --}}
+                                >
                                     <iconify-icon icon="fluent:delete-off-20-regular"></iconify-icon>
                                 </button>
                             </span>
@@ -54,6 +56,11 @@
     {{!-- Create deck modal --}}
     <div class="modal fade" id="create-deck-modal" tabindex="-1" aria-labelledby="createDeckLabel" aria-hidden="true">
     {{> deckCreateModal}}
+    </div>
+
+        {{!-- Delete deck modal --}}
+    <div class="modal fade" id="delete-deck-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    {{> deckDeleteModal}}
     </div>
     
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>

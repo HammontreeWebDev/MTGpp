@@ -39,20 +39,21 @@ async function editDeckHandler() {
 
 // function to delete specific deck
 async function deleteDeckHandler() {
-
-  const del = await fetch(`api/deck`, {
-    method: 'DELETE',
-    body: JSON.stringify({ id: this.dataset.deckId }),
-    headers: { 'Content-Type': 'application/json' },
-  });
-
-  if (del.ok) {
-    document.location.replace('/decks');
-  }
-  else {
-    console.error(new Error());
-  }
-
+  if (confirm('Are you sure you want to delete this deck? This cannot be undone.')) {
+    const del = await fetch(`api/deck`, {
+      method: 'DELETE',
+      body: JSON.stringify({ id: this.dataset.deckId }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (del.ok) {
+      document.location.replace('/decks');
+    }
+    else {
+      console.error(new Error());
+    }
+  } else {
+  return;
+  };
 }
 
 // event listners
