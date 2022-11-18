@@ -83,6 +83,8 @@ async function init() {
                 let countID = $.trim(nameResponse.replace(/\s+/g, ''));
                 countID = $.trim(countID.replace('//', ''));
                 countID = $.trim(countID.replace(',', ''));
+                countID = $.trim(countID.replace("'", ''));
+
 
                 // initialize card count to 1
                 let countResponse = 1;
