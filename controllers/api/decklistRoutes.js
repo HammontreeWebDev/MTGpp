@@ -7,7 +7,6 @@ router.get("/:id", async (req, res) => {
     try {
         // Search the database for a deck with an id that matches params
         const deckData = await Deck.findByPk(req.params.id);
-        // console.log(deckData)
 
         // serialize the data
         const decklist = deckData.get({ plain: true });
@@ -25,10 +24,7 @@ router.put("/", withAuth, async (req, res) => {
             deck.deck_name = req.body.deck_name;
         }
         if (req.body.deck_list) {
-            // console.log(typeof req.body.deck_list, req.body.deck_list);
-            // console.log(typeof deck.deck_list, deck.deck_list);
             deck.deck_list = req.body.deck_list;
-            // console.log(typeof deck.deck_list, deck.deck_list);
         }
         await deck.save();
     } catch (err) {

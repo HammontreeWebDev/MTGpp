@@ -71,7 +71,6 @@ router.get("/collection/:id", async (req, res) => {
 
         // Serialize data
         const deckListData = deckData.get({ plain: true }).deck_list;
-        // console.log(typeof deckListData, deckListData);
         const deckList = JSON.parse(deckListData);
 
         // Create card collection
@@ -86,7 +85,6 @@ router.get("/collection/:id", async (req, res) => {
 
         // Did it work?
         if (deckCollection) {
-            // console.log(deckCollection);
             res.status(200).json(deckCollection);
         } else {
             res.status(400).json({ message: "Something weird happened" });
