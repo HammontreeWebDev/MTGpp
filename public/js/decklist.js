@@ -226,11 +226,11 @@ cardSubmit.submit(function (event) {
 
             if (response.image_uris === undefined) {
                 cardArt.attr("src", '../assets/images/meme.jpeg');
-                cardName.text(response.name);
+                cardName.text(`${response.name}`);
             }
             else {
                 cardArt.attr("src", response.image_uris.border_crop);
-                cardName.text(response.name);
+                cardName.text(`${response.name}`);
             }
 
             return response;
@@ -261,6 +261,7 @@ cardSubmit.submit(function (event) {
                 countID = $.trim(countID.replace("'", ''));
                 countID = $.trim(countID.replace(',', ''));
                 countID = $.trim(countID.replace(/\s+/g, ''));
+                
 
                 // initialize card count to 1
                 let countResponse = 1;
@@ -298,8 +299,10 @@ cardSubmit.submit(function (event) {
 
                 // If the type of card exists, append the card name only to existing ID for that card type
                 // check response name against name Array and update to name and amount, else it defaults to response.name and amount 1
+                console.log($("#card-list")[0].innerHTML);
+                if ($("#card-list")[0].innerHTML.includes(countID)) {
 
-                if (document.body.textContent.includes(listId) && document.body.innerHTML.includes(countID)) {
+                    console.log('first if statment');
 
                     let index = nameArray.indexOf(nameResponse);
                     nameResponse = nameArray[index];
@@ -309,7 +312,7 @@ cardSubmit.submit(function (event) {
 
                 }
 
-                else if (document.body.textContent.includes(listId)) {
+                 else if (document.body.textContent.includes(listId)) {
 
                     let index = nameArray.indexOf(nameResponse);
                     nameResponse = nameArray[index];
@@ -367,17 +370,27 @@ $(document).on({
             namesArray.push(names);
         }
         // Get index of the name that matches in the name array
-        let namesIndex = namesArray.indexOf(event.target.dataset.card);
-        let index = namesIndex;
 
+        const indexes = namesArray
+            .map((element, index) => {
+                if (element === this.dataset.card) {
+                    console.log(element);
+                    return index;
+                }
+            })
+            .filter(element => element >= 0);
         // based on the index number found above, use that to delete all card information for that index number (the numbers will match)
 
-        if (index > -1) {
-            cardArray.splice(index, 1);
+        console.log(indexes);
+
+        for (let i = 0;  indexes.length; i++) {
+            cardArray.splice(indexes[i], 1);
+        }
+            // cardArray.splice(indexes, 1);
             this.parentElement.remove();
             // check if ul is empty and if so, delete type header from page as well
             handleTypeHeaderDelete();
-        }
+    
     }
 }, ".delete-card")
 
