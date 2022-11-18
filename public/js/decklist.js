@@ -324,7 +324,6 @@ cardSubmit.submit(function (event) {
 
                     $(`#${countID}`)[0].innerHTML = `(x${countResponse})`;
 
-
                 }
 
                 else if (document.body.textContent.includes(listId)) {
