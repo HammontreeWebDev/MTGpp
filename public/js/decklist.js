@@ -24,7 +24,6 @@ function handleAutocomplete() {
                 return response.json();
             })
             .then((response) => {
-                // console.log(response);
                 cardSearch.autocomplete({
                     source: response,
                 });
@@ -61,12 +60,7 @@ async function init() {
 
         .then((cardArray) => {
 
-            // console.log(cardArray);
-
             for (i = 0; i < cardArray.length; i++) {
-
-                // console.log(cardArray[i].name);
-                // console.log(cardArray[i].type);
 
                 // set up array to count the number of duplicates
                 let cardCount = [];
@@ -87,7 +81,6 @@ async function init() {
 
                 // initialize card count to 1
                 let countResponse = 1;
-                // console.log(cardArray[i].name);
 
                 if (typeResponse.includes("Creature")) {
                     listId = "Creature";
@@ -122,7 +115,6 @@ async function init() {
                     let index = nameArray.indexOf(nameResponse);
                     nameResponse = nameArray[index];
                     countResponse = countArray[index];
-                    console.log(countID);
 
                     $(`#${countID}`)[0].innerHTML = `(x${countResponse})`;
 
@@ -135,7 +127,6 @@ async function init() {
 
                 // otherwise, create the ID, ul, and first li
                 else {
-                    // console.log(listId);
 
                     cardList.append(`<ul id="${listId}" class="no-list">
                     <h5 class="card-type">${listId}</h5>
@@ -143,18 +134,17 @@ async function init() {
                 }
                 function renderAmount() {
                     for (let i = 0; i < cardArray.length; i++) {
-                        // console.log(cardArray[i].name);
+
                         cardCount.push(cardArray[i].name)
                     }
-                    // console.log(cardCount);
+
                     cardCount.forEach(card => {
                         count[card] = (count[card] || 0) + 1;
                     })
 
                     nameArray = Object.keys(count)
                     countArray = Object.values(count)
-                    console.log(countArray);
-                    console.log(nameArray);
+
                 }
             }
         })
@@ -216,7 +206,6 @@ function handleTypeHeaderDelete() {
 
         if (!children[1]) {
             children[0].parentElement.remove();
-            console.log('Removed Unordered List');
         }
     }
 }
@@ -226,7 +215,6 @@ cardSubmit.submit(function (event) {
     event.preventDefault();
     fetch(`../api/scry/name/${$("input").first().val().replace('//', '')}`)
         .then((response) => {
-            // console.log($( "input" ).first().val());
             if (response.ok) {
                 return response.json();
             } else {
@@ -235,7 +223,6 @@ cardSubmit.submit(function (event) {
         })
         // Card Art Render Section
         .then((response) => {
-            // console.log(response.name);
 
             if (response.image_uris === undefined) {
                 cardArt.attr("src", '../assets/images/meme.jpeg');
@@ -250,7 +237,6 @@ cardSubmit.submit(function (event) {
         })
         // Add selected card information to array of objects
         .then((response) => {
-            // console.log(response);
             cardArray.push({
                 name: response.name,
                 id: response.id,
@@ -266,8 +252,6 @@ cardSubmit.submit(function (event) {
 
             // append selected cards to the page
             checkType();
-
-            // console.log(cardArray);
 
             function checkType() {
                 renderAmount();
@@ -320,7 +304,6 @@ cardSubmit.submit(function (event) {
                     let index = nameArray.indexOf(nameResponse);
                     nameResponse = nameArray[index];
                     countResponse = countArray[index];
-                    console.log(countID);
 
                     $(`#${countID}`)[0].innerHTML = `(x${countResponse})`;
 
@@ -332,16 +315,12 @@ cardSubmit.submit(function (event) {
                     nameResponse = nameArray[index];
                     countResponse = countArray[index];
 
-                    // console.log(nameResponse);
-                    // console.log(countResponse);
-
                     $(`#${listId}`).append(`
                     <li><button class="added-card">${nameResponse}</button><span id="${countID}" class="card-count">(x${countResponse})</span><iconify-icon icon="typcn:delete" data-card="${nameResponse}" class ="delete-card"></iconify-icon></li>`);
                 }
 
                 // otherwise, create the ID, ul, and first li
                 else {
-                    // console.log(listId);
 
                     cardList.append(`<ul id="${listId}" class="no-list">
                     <h5 class="card-type">${listId}</h5>
@@ -353,21 +332,16 @@ cardSubmit.submit(function (event) {
 
             // function to render amount of cards to page and update cardArray
             // called in check type function
-            // console.log(cardArray);
             function renderAmount() {
                 for (let i = 0; i < cardArray.length; i++) {
-                    // console.log(cardArray[i].name);
                     cardCount.push(cardArray[i].name)
                 }
-                // console.log(cardCount);
                 cardCount.forEach(card => {
                     count[card] = (count[card] || 0) + 1;
                 })
 
                 nameArray = Object.keys(count)
                 countArray = Object.values(count)
-                console.log(countArray);
-                console.log(nameArray);
             }
         })
         .catch((error) => {
@@ -421,7 +395,6 @@ $(document).on(
                     }
                 })
                 .then((response) => {
-                    // console.log(response);
                     // set card art area based on hovered card name
 
                     if (response.image_uris === undefined) {
