@@ -51,7 +51,6 @@ async function init() {
                 return {
                     name: element.name,
                     id: element.id,
-                    art: element.image_uris.border_crop,
                     type: element.type_line,
                 };
             });
@@ -247,7 +246,6 @@ cardSubmit.submit(function (event) {
             cardArray.push({
                 name: response.name,
                 id: response.id,
-                art: response.image_uris.border_crop,
                 type: response.type_line,
                 amount: '',
             });
