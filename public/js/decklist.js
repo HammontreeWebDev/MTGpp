@@ -81,9 +81,9 @@ async function init() {
                 let typeResponse = cardArray[i].type;
                 let listId;
                 let countID = $.trim(nameResponse.replace('//', ''));
-                countID = $.trim(countID.replace(/\s+/g, ''));
-                countID = $.trim(countID.replace(',', ''));
                 countID = $.trim(countID.replace("'", ''));
+                countID = $.trim(countID.replace(',', ''));
+                countID = $.trim(countID.replace(/\s+/g, ''));
 
 
                 // initialize card count to 1
