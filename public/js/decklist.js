@@ -51,7 +51,6 @@ async function init() {
                 return {
                     name: element.name,
                     id: element.id,
-                    art: element.image_uris.border_crop,
                     type: element.type_line,
                 };
             });
@@ -80,9 +79,11 @@ async function init() {
                 let nameResponse = cardArray[i].name;
                 let typeResponse = cardArray[i].type;
                 let listId;
-                let countID = $.trim(nameResponse.replace(/\s+/g, ''));
-                countID = $.trim(countID.replace('//', ''));
+                let countID = $.trim(nameResponse.replace('//', ''));
+                countID = $.trim(countID.replace("'", ''));
                 countID = $.trim(countID.replace(',', ''));
+                countID = $.trim(countID.replace(/\s+/g, ''));
+
 
                 // initialize card count to 1
                 let countResponse = 1;
@@ -149,7 +150,7 @@ async function init() {
                     cardCount.forEach(card => {
                         count[card] = (count[card] || 0) + 1;
                     })
-        
+
                     nameArray = Object.keys(count)
                     countArray = Object.values(count)
                     console.log(countArray);
@@ -223,7 +224,7 @@ function handleTypeHeaderDelete() {
 // render card art / add to array / render cards to page
 cardSubmit.submit(function (event) {
     event.preventDefault();
-    fetch(`../api/scry/name/${$("input").first().val()}`)
+    fetch(`../api/scry/name/${$("input").first().val().replace('//', '')}`)
         .then((response) => {
             // console.log($( "input" ).first().val());
             if (response.ok) {
@@ -235,8 +236,16 @@ cardSubmit.submit(function (event) {
         // Card Art Render Section
         .then((response) => {
             // console.log(response.name);
-            cardArt.attr("src", response.image_uris.border_crop);
-            cardName.text(response.name);
+
+            if (response.image_uris === undefined) {
+                cardArt.attr("src", '../assets/images/meme.jpeg');
+                cardName.text(response.name);
+            }
+            else {
+                cardArt.attr("src", response.image_uris.border_crop);
+                cardName.text(response.name);
+            }
+
             return response;
         })
         // Add selected card information to array of objects
@@ -245,7 +254,6 @@ cardSubmit.submit(function (event) {
             cardArray.push({
                 name: response.name,
                 id: response.id,
-                art: response.image_uris.border_crop,
                 type: response.type_line,
                 amount: '',
             });
@@ -265,9 +273,10 @@ cardSubmit.submit(function (event) {
                 renderAmount();
                 let typeResponse = response.type_line;
                 let nameResponse = response.name;
-                let countID = $.trim(nameResponse.replace(/\s+/g, ''));
-                countID = $.trim(countID.replace('//', ''));
+                let countID = $.trim(nameResponse.replace('//', ''));
+                countID = $.trim(countID.replace("'", ''));
                 countID = $.trim(countID.replace(',', ''));
+                countID = $.trim(countID.replace(/\s+/g, ''));
 
                 // initialize card count to 1
                 let countResponse = 1;
@@ -314,7 +323,6 @@ cardSubmit.submit(function (event) {
                     console.log(countID);
 
                     $(`#${countID}`)[0].innerHTML = `(x${countResponse})`;
-
 
                 }
 
@@ -404,7 +412,7 @@ $(document).on(
     {
         mouseenter: function () {
             //fetch card information based on hovered card name
-            fetch(`../api/scry/name/${this.textContent}`)
+            fetch(`../api/scry/name/${this.textContent.replace('//', '')}`)
                 .then((response) => {
                     if (response.ok) {
                         return response.json();
@@ -415,8 +423,15 @@ $(document).on(
                 .then((response) => {
                     // console.log(response);
                     // set card art area based on hovered card name
-                    cardArt.attr("src", response.image_uris.border_crop);
-                    cardName.text(response.name);
+
+                    if (response.image_uris === undefined) {
+                        cardArt.attr("src", '../assets/images/lookinForMe.png');
+                        cardName.text(response.name);
+                    }
+                    else {
+                        cardArt.attr("src", response.image_uris.border_crop);
+                        cardName.text(response.name);
+                    }
                 });
         },
         mouseleave: function () {
