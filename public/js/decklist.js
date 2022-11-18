@@ -261,7 +261,7 @@ cardSubmit.submit(function (event) {
                 countID = $.trim(countID.replace("'", ''));
                 countID = $.trim(countID.replace(',', ''));
                 countID = $.trim(countID.replace(/\s+/g, ''));
-                
+
 
                 // initialize card count to 1
                 let countResponse = 1;
@@ -312,7 +312,7 @@ cardSubmit.submit(function (event) {
 
                 }
 
-                 else if (document.body.textContent.includes(listId)) {
+                else if (document.body.textContent.includes(listId)) {
 
                     let index = nameArray.indexOf(nameResponse);
                     nameResponse = nameArray[index];
@@ -370,27 +370,30 @@ $(document).on({
             namesArray.push(names);
         }
         // Get index of the name that matches in the name array
+        let namesIndex = namesArray.indexOf(event.target.dataset.card);
+        let index = namesIndex;
 
-        const indexes = namesArray
-            .map((element, index) => {
-                if (element === this.dataset.card) {
-                    console.log(element);
-                    return index;
-                }
-            })
-            .filter(element => element >= 0);
         // based on the index number found above, use that to delete all card information for that index number (the numbers will match)
+        if (index > -1) {
+            cardArray.splice(index, 1);
+            namesArray.splice(index, 1);
 
-        console.log(indexes);
+            let nameCounter = 0;
 
-        for (let i = 0;  indexes.length; i++) {
-            cardArray.splice(indexes[i], 1);
-        }
-            // cardArray.splice(indexes, 1);
-            this.parentElement.remove();
+            for (names of namesArray) {
+                if (names === event.target.dataset.card) {
+                    nameCounter++
+                }
+            }
+            console.log(namesArray);
+            console.log(event.target.dataset.card);
+            console.log(nameCounter);
+
+            // this.parentElement.remove();
             // check if ul is empty and if so, delete type header from page as well
             handleTypeHeaderDelete();
-    
+        }
+       
     }
 }, ".delete-card")
 
