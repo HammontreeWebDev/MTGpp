@@ -385,15 +385,22 @@ $(document).on({
                     nameCounter++
                 }
             }
-            console.log(namesArray);
-            console.log(event.target.dataset.card);
-            console.log(nameCounter);
 
-            // this.parentElement.remove();
-            // check if ul is empty and if so, delete type header from page as well
+            let currentName = event.target.dataset.card;
+            let currentID = $.trim(currentName.replace('//', ''));
+            currentID = $.trim(currentID.replace("'", ''));
+            currentID = $.trim(currentID.replace(',', ''));
+            currentID = $.trim(currentID.replace(/\s+/g, ''));
+
+            if (nameCounter > 0) {
+                event.target.parentElement.innerHTML = `<button class="added-card">${currentName}</button><span id="${currentID}" class="card-count">(x${nameCounter})</span><iconify-icon icon="typcn:delete" data-card="${currentName}" class="delete-card"></iconify-icon>`
+            }
+            else {
+                this.parentElement.remove()
+            } 
             handleTypeHeaderDelete();
         }
-       
+
     }
 }, ".delete-card")
 
