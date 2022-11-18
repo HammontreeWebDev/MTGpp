@@ -150,7 +150,7 @@ async function init() {
                     cardCount.forEach(card => {
                         count[card] = (count[card] || 0) + 1;
                     })
-        
+
                     nameArray = Object.keys(count)
                     countArray = Object.values(count)
                     console.log(countArray);
@@ -236,9 +236,16 @@ cardSubmit.submit(function (event) {
         // Card Art Render Section
         .then((response) => {
             // console.log(response.name);
-            console.log(response.image_uris);
-            cardArt.attr("src", response.image_uris.border_crop);
-            cardName.text(response.name);
+
+            if (response.image_uris === undefined) {
+                cardArt.attr("src", '../assets/images/meme.jpeg');
+                cardName.text(response.name);
+            }
+            else {
+                cardArt.attr("src", response.image_uris.border_crop);
+                cardName.text(response.name);
+            }
+
             return response;
         })
         // Add selected card information to array of objects
@@ -406,7 +413,7 @@ $(document).on(
     {
         mouseenter: function () {
             //fetch card information based on hovered card name
-            fetch(`../api/scry/name/${this.textContent}`)
+            fetch(`../api/scry/name/${this.textContent.replace('//', '')}`)
                 .then((response) => {
                     if (response.ok) {
                         return response.json();
@@ -417,8 +424,15 @@ $(document).on(
                 .then((response) => {
                     // console.log(response);
                     // set card art area based on hovered card name
-                    cardArt.attr("src", response.image_uris.border_crop);
-                    cardName.text(response.name);
+
+                    if (response.image_uris === undefined) {
+                        cardArt.attr("src", '../assets/images/lookinForMe.png');
+                        cardName.text(response.name);
+                    }
+                    else {
+                        cardArt.attr("src", response.image_uris.border_crop);
+                        cardName.text(response.name);
+                    }
                 });
         },
         mouseleave: function () {
