@@ -224,7 +224,7 @@ function handleTypeHeaderDelete() {
 // render card art / add to array / render cards to page
 cardSubmit.submit(function (event) {
     event.preventDefault();
-    fetch(`../api/scry/name/${$("input").first().val()}`)
+    fetch(`../api/scry/name/${$("input").first().val().replace('//', '')}`)
         .then((response) => {
             // console.log($( "input" ).first().val());
             if (response.ok) {
@@ -236,6 +236,7 @@ cardSubmit.submit(function (event) {
         // Card Art Render Section
         .then((response) => {
             // console.log(response.name);
+            console.log(response.image_uris);
             cardArt.attr("src", response.image_uris.border_crop);
             cardName.text(response.name);
             return response;
